@@ -77,10 +77,13 @@ body.page-parent #home-content{position:relative;top:-15px;z-index:30;}
 	text-transform:uppercase;
 }
 #menubar .nav li.page-item-149 a{background-position:left 0;width:65px;padding-left:11px;}
-#menubar .nav li.page-item-3970 a{background-position:-76px 0;width:99px;}
-#menubar .nav li.page-item-3992 a{background-position:-76px 0;width:99px;}
-#menubar .nav li.page-item-3990 a{background-position:-76px 0;width:99px;}
-#menubar .nav li.page-item-3798 a{background-position:-76px 0;width:99px;}
+#menubar .nav li.page-item-3970 a{background-position:-76px 0;width:75px;}
+#menubar .nav li.page-item-3992 a{background-position:-76px 0;width:75px;}
+#menubar .nav li.page-item-3990 a{background-position:-76px 0;width:75px;}
+#menubar .nav li.page-item-3798 a{background-position:-76px 0;width:75px;}
+#menubar .nav li.page-item-3997 a{background-position:-76px 0;width:75px;}
+#menubar .nav li.page-item-4001 a{background-position:-76px 0;width:105px;}
+#menubar .nav li.page-item-4003 a{background-position:-76px 0;width:105px;}
 #menubar .nav li.page-item-3994 a{background-position:-76px 0;width:99px;}
 
 #menubar .nav li.last{
