@@ -13,10 +13,10 @@ td,
 .textgridwidget{font-size:11px;font-weight:normal;text-align:left;color:#999;}
 p{margin:0 0 0.5em;}
 h1,h2,h3,h4,h5{color:#999;font-weight:bold;margin-bottom:0.75em;}
-h1{font-size:18px;}
-h2{font-size:16px;color:#1F64D9;}
+h1{font-size:18px;color:#1F64D9;margin-bottom:0.5em;}
+h2{font-size:16px;color:#222;}
 h3{font-size:14px;}
-h4{font-size:13px;color:#222;}
+h4{font-size:13px;}
 h5{font-size:12px;}
 ul,
 ol{color:#999;}
