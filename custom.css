@@ -429,6 +429,7 @@ input[type="checkbox"]{font-size:11px;background-color:#fff;border:1px solid #ca
 .tradein, .tireRequest, 
 .partsRequest, .serviceAppointment{width:768px;}
 .staffEmail {width:345px;}
+.estimate {width:550px;}
 
 /* default style */
 td .form {padding: 0 10px 10px;}
@@ -476,6 +477,7 @@ td .form {padding: 0 10px 10px;}
 .contactusSmall .form-group {width:300px;}
 .partsRequest .form-group, 
 .serviceAppointment .form-group {width:240px;}
+.estimate .form-group {width:250px;}
 .form .form-group br {
 	display:none!important;	
 }
@@ -492,6 +494,7 @@ td .form {padding: 0 10px 10px;}
 .contactusSmall label, .staffEmail label, 
 .partsRequest label, .serviceAppointment label {width:90px;}
 .form .wpcf7-checkbox .wpcf7-list-item  .wpcf7-list-item-label {color:#888;vertical-align:middle;}
+.estimate label {width:90px;}
 
 .form select {width:143px;}
 .form  input, select {font-size:11px;vertical-align:middle;}
