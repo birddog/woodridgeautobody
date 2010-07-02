@@ -503,6 +503,7 @@ td .form {padding: 0 10px 10px;}
 .contactus textarea, . {width:600px;}
 .partsRequest textarea, .contactFinance textarea, .contactFleet textarea { width:705px;}
 .collisionCenter textarea {360px;}
+.estimate textarea {width:480px;}
 
 /* form validation */
 span.wpcf7-not-valid-tip {
