@@ -694,7 +694,29 @@ body.page-id-206 #site-content > .grid_12 > #post-206{padding:0 0 0 10px;}
 * - should be in grid 960 css file but added anyway 
 **************************************/
 .clear{clear:both;height:0;}
-
+/**************************************
+* Bios'
+**************************************/
+#post-3166 .staff{padding-bottom:20px;}
+.staff{width:720px;padding-bottom:60px;}
+.staff .person{position:relative;float:left;width:230px;font:normal 11px arial;color:#999;background:url(http://www.woodridgeford.com/wp-content/uploads/2010/03/bioBg2.jpg) no-repeat;margin:5px 5px 30px;}
+.staff .person .photo{float:left;margin-right:10px;padding:0;}
+.staff .person .name{font-size:14px;}
+.staff .person .title{font-size:11px;}
+.staff .person .phone{font-size:13px;color:#1d4a9f;}
+.staff .person .email{display:block;padding:15px 0;}
+.staff .person .toggle{display:block;}
+.staff .person .bio-text{display:none;position:absolute;font-size:11px;color:#999;background-color:#fff;z-index:900;padding:5px;width:200px;box-shadow:2px 2px 2px #222;-moz-box-shadow:2px 2px 2px #222;-webkit-box-shadow:2px 2px 2px #222;-moz-border-radius:5px;-webkit-border-radius:5px;border:1px solid #555;}
+.mmf-response-output.mmf-mail-sent-ng,
+.mmf-response-output.mmf-mail-sent-ok{background:#090;color:white;}
+#boxBio{width:720px;}
+#containerBio{width:220px;height:260px;background-image:url(/wp-content/uploads/2010/03/bioBg2.jpg);background-repeat:no-repeat;margin:10px;float:left;}
+.picBio{width:100px;float:left;margin-right:10px;}
+.nameBio{font-size:14px;color:#999;margin-bottom:0px;}
+.titleBio{font-size:11px;color:#999;}
+.phoneBio{font-size:13px;color:#1d4a9f;}
+.emailBio{padding-bottom:15px;}
+.textBio{display:none;font-size:9px;color:#1d4a9f;background-image:url(/wp-content/uploads/2010/03/bioBg.jpg);background-repeat:no-repeat;margin-top:18px;padding-top:4px;}
 /**************************************
 * OTHER ?!??!#HR!@)#*
 **************************************/
