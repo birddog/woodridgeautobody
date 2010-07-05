@@ -125,7 +125,8 @@ div.quicklinksItem ul.first{width:190px;}
 div.quicklinksItem ul.last{width:140px;}
 div.quicklinksItem div.img{position:absolute;}
 div#quickmenu{width:330px;}
-div#quicktools{width:288px;}
+div#quickmenu ul {float:left; margin:0 10px 10px;}
+/*div#quicktools{width:288px;}
 div#quicktools ul.first{width:150px;}
 div#quicktools ul.last{width:135px;}
 div#quicktools ul li{background-image:url('/wp-content/uploads/quick-find-bullet.png');}
@@ -137,7 +138,7 @@ div#quickhours ul li span{display:block;float:left;width:70px;}
 div#quicknews{position:relative;width:250px;padding-right:0;}
 div#quicknews div.quicklinksTitle{}
 div#quicknews div.quicklinksSubtitle{margin:0 0 10px 0;}
-div#quicknews ul li{background-image:url('/wp-content/uploads/quick-find-bullet.png');}
+div#quicknews ul li{background-image:url('/wp-content/uploads/quick-find-bullet.png');}*/
 td#footer{color:#666;text-align:center;padding:0;background:#1d1d1d;width:100%;}
 td#footer div#footerWrap{text-align:left;width:970px;overflow:hidden;margin:0 auto;padding:0 5px 20px 5px;}
 body.quicklinksbody td#footer div#footerWrap{background:none;}
