@@ -121,11 +121,11 @@ jQuery(function($) {
   /* Quick Find Slideout */
   $('#quick-find-button').click(function(){
     if ($('#slideout').css('display') == 'none') {
-      $('#quick-find-button').find("img").attr('src', '/wp-content/uploads/2010/03/blue-arrow-up.jpg');
+      $('#quick-find-button').find("img").attr('src', '/wp-content/uploads/blue-arrow-up.jpg');
       $('#slideout').show();
     } else {
       $('#slideout').hide();
-      $('#quick-find-button').find("img").attr('src', '/wp-content/uploads/2010/03/blue-arrow.jpg');
+      $('#quick-find-button').find("img").attr('src', '/wp-content/uploads/blue-arrow.jpg');
     }
     return false;
   });
