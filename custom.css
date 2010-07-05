@@ -121,10 +121,7 @@ div.quicklinksItem ul a:visited{color:#797979;font-weight:normal;text-decoration
 div.quicklinksItem ul a:hover,
 div.quicklinksItem ul a:focus,
 div.quicklinksItem ul a:active{color:#1D4A9F;font-weight:normal;text-decoration:none;}
-div.quicklinksItem ul.first{width:190px;}
-div.quicklinksItem ul.last{width:140px;}
 div.quicklinksItem div.img{position:absolute;}
-div#quickmenu{width:330px;}
 div#quickmenu ul {float:left; margin:0 10px 10px;}
 /*div#quicktools{width:288px;}
 div#quicktools ul.first{width:150px;}
