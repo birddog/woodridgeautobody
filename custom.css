@@ -480,6 +480,7 @@ td .form {padding: 0 10px 10px;}
 .form .form-group br {
 	display:none!important;	
 }
+.form .form-group p {font-weight:bold;}
 .form label {
 	display:inline-block;
 	width:	150px;
