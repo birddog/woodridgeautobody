@@ -428,6 +428,7 @@ input[type="checkbox"]{font-size:11px;background-color:#fff;border:1px solid #ca
 .partsRequest, .serviceAppointment{width:768px;}
 .staffEmail {width:345px;}
 .estimate {width:550px;}
+#slideout .estimate {width:100%;}
 
 /* default style */
 td .form {padding: 0 10px 10px;}
