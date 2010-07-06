@@ -391,17 +391,17 @@ jQuery(function($) {
   }
   
   
-    $('input.postalCode').focus(function(){ 
-    if($(this).val() == $(this).attr('defaultvalue')) {
-      $(this).val('');
-    }
-  });
+	$('input.postalCode').focus(function(){ 
+		if($(this).val() == $(this).attr('value')) {
+			$(this).val('');
+		}
+	});
   
-  $('input.postalCode').blur(function(){
-    if($(this).val() == ''){
-      $(this).val($(this).attr('defaultvalue'));
-    } 
-  });
+	$('input.postalCode').blur(function(){
+		if($(this).val() == ''){
+			$(this).val($(this).attr('value'));
+		} 
+	});
 
   
 });
