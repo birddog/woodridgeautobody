@@ -390,6 +390,22 @@ jQuery(function($) {
     $('.bird_dog .detail .photos .photo').attr('rel','lightbox');
   }
   
+  
+    $('input.postalCode').focus(function(){ 
+    if($(this).val() == $(this).attr('defaultValue'))
+    {
+      $(this).val('');
+    }
+  });
+  
+  $('input.postalCode').blur(function(){
+    if($(this).val() == '')
+    {
+      $(this).val($(this).attr('defaultValue'));
+    } 
+  });
+
+  
 });
 
 /*
