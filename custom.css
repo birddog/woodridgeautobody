@@ -498,6 +498,7 @@ td .form {padding: 0 10px 10px;}
 
 .form select {width:143px;}
 .form  input, select {font-size:11px;vertical-align:middle;}
+textarea {width:50%;}
 .contactusSmall textarea {width:300px;}
 .preownedtestdrive textarea, .newtestdrive textarea,
 .contactus textarea, . {width:600px;}
@@ -846,6 +847,7 @@ body.page-id-43 .dt-showcase .detail .tabs{left:-1px;}
 .pika_navigation a:hover{text-decoration:underline;}
 .pika_navigation{padding-top:10px;clear:both;text-align:center;}
 
+#post-4036 #pikame {display:block; float:none;width:auto;}
 /**********************************************/
 /* Lightbox
 /**********************************************/
