@@ -404,7 +404,7 @@ jQuery(function($) {
 		var gmapURL = "http://maps.google.ca/maps?f=d&amp;source=s_d&amp;saddr=" + postalCode + "&amp;daddr=10860+46+St+SE,+Calgary,+Division+No.+6,+Alberta+T2C+4Y5&amp;hl=en&amp;geocode=FbR2CQMdIvky-SkbQPXtU3FxUzGFoagS-_XE-A%3BFeovCgMdI_80-SlRx94pR3pxUzE7uJHvC8SLBQ&amp;mra=ls&amp;sll=50.999274,-113.967325&amp;sspn=0.008683,0.01929&amp;g=10860+46+St+SE,+Calgary,+Division+No.+6,+Alberta+T2C+4Y5&amp;ie=UTF8&amp;ll=50.97561,-114.035365&amp;spn=0.04734,0.13603&amp;output=embed";
 
 		// create iframe
-		var gmapIframe = "<iframe id='gmapiframelarge' width='895' height='363' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='" + gmapURL + "'></iframe>";
+		var gmapIframe = "<iframe id='gmapiframelarge' width='908' height='353' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='" + gmapURL + "' style='margin:5px;'></iframe>";
 		
 		//	create close large gmap iframe
 		var closeIframe = "<div class='iframeclose'>X</div>";
@@ -416,7 +416,7 @@ jQuery(function($) {
 		$('#post-45 #contactTop').append(gmapIframe).append(closeIframe);
 		
 		//	action for close button
-		$('#post-45 #contactTop .iframeclose').click(function() { $(this).parent().find('#gmapiframelarge').remove(); }).remove();
+		$('#post-45 #contactTop .iframeclose').live('click', function() { $(this).parent().find('#gmapiframelarge').remove(); }).remove();
 		
 		
 	 });
