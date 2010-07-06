@@ -392,18 +392,35 @@ jQuery(function($) {
   
   	var gmapPostalSearchValue = "Enter Postal Code...";
 	
-	$('input.postalCode').focus(function(){ 
+	$('#postalSearch input.postalCode').focus(function(){ 
 		if($(this).val() == gmapPostalSearchValue) {
 			$(this).val('');
 		}
 	});
-  
-	$('input.postalCode').blur(function(){
-		if($(this).val() == ''){
-			$(this).val(gmapPostalSearchValue);
-		} 
-	});
-
+	$('#postalSearch img').click(function() {
+		// Grab postal code
+		var postalCode = $('#postalSearch input.postalCode').val();
+		
+		// create gmaps url string
+		var gmapURL = "http://maps.google.ca/maps?f=d&amp;source=s_d&amp;saddr=" + postalCode + "&amp;daddr=10860+46+St+SE,+Calgary,+AB+T2C+4Y5&amp;hl=en&amp;geocode=FbR2CQMdIvky-SkbQPXtU3FxUzGFoagS-_XE-A%3BFeovCgMdI_80-SlRx94pR3pxUzE7uJHvC8SLBQ&amp;mra=ls&amp;sll=51.006302,-113.964958&amp;sspn=0.034727,0.077162&amp;ie=UTF8&amp;t=h&amp;ll=50.97561,-114.035365&amp;spn=0.04734,0.13603&amp;output=embed";
+		
+		// create iframe
+		var gmapIframe = "<iframe id='gmapiframelarge' width='885' height='363' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='" + gmapURL + "'></iframe>";
+		
+		//	create close large gmap iframe
+		var closeIframe = "<div class='iframeclose'></div>";
+		
+		//hide current contact information
+		$('#post-45 #contactTop').find('.cfloat').hide();
+		
+		//	display iframe of the route
+		$('#post-45 #contactTop').append(gmapIframe).append(closeIframe);
+		
+		//	action for close button
+		$('#post-45 #contactTop .iframeclose').click(function() { $(this).parent().find('#gmapiframelarge').remove(); }).remove();
+		
+		
+	 });
   
 });
 
