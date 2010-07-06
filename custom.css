@@ -78,7 +78,7 @@ body.page-parent #home-content{position:relative;top:-15px;z-index:30;}
 }
 #menubar .nav li.page-item-149 a{background-position:left 0;width:65px;padding-left:11px;}
 #menubar .nav li.page-item-3970 a{background-position:-299px 0;width:75px;}
-#menubar .nav li.page-item-3992 a{background-position:-299px 0;width:75px;}
+#menubar .nav li.page-item-3992 a{background-position:-299px 0;width:80px;}
 #menubar .nav li.page-item-3990 a{background-position:-299px 0;width:75px;}
 #menubar .nav li.page-item-3798 a{background-position:-299px 0;width:75px;}
 #menubar .nav li.page-item-3997 a{background-position:-299px 0;width:85px;}
@@ -89,7 +89,7 @@ body.page-parent #home-content{position:relative;top:-15px;z-index:30;}
 #menubar .nav li.last{
 	background-image:url('/wp-content/uploads/menubar-nav-bg.png');
 	background-position:right top;
-	width:125px;
+	width:118px;
 	height:34px;
 }
 #menubar .nav div.subtext {
