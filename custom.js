@@ -392,15 +392,13 @@ jQuery(function($) {
   
   
     $('input.postalCode').focus(function(){ 
-    if($(this).val() == $(this).attr('defaultvalue'))
-    {
+    if($(this).val() == $(this).attr('defaultvalue')) {
       $(this).val('');
     }
   });
   
   $('input.postalCode').blur(function(){
-    if($(this).val() == '')
-    {
+    if($(this).val() == ''){
       $(this).val($(this).attr('defaultvalue'));
     } 
   });
