@@ -421,7 +421,7 @@ jQuery(function($) {
 		
 		//	display iframe of the route
 		$('#post-45 #contactTop').append(gmapIframe);
-		$('#gmapiframelarge').fadeIn();
+		$('#gmapiframelarge').animate({opacity: 1.0}, 200);
 	 });
   
 });
