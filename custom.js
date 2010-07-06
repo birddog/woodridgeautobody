@@ -392,7 +392,7 @@ jQuery(function($) {
   
   
     $('input.postalCode').focus(function(){ 
-    if($(this).val() == $(this).attr('defaultValue'))
+    if($(this).val() == $(this).attr('defaultvalue'))
     {
       $(this).val('');
     }
@@ -401,7 +401,7 @@ jQuery(function($) {
   $('input.postalCode').blur(function(){
     if($(this).val() == '')
     {
-      $(this).val($(this).attr('defaultValue'));
+      $(this).val($(this).attr('defaultvalue'));
     } 
   });
 
