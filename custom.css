@@ -727,10 +727,18 @@ body.page-id-206 #site-content > .grid_12 > #post-206{padding:0 0 0 10px;}
 #contactTop{
 	background-color:#F4F4F4;
 	border:1px solid #999;
-	width:920px;
+	width:918px;
 }
 #contactTop .cfloat {float:left;margin:15px 15px 10px 15px;}
-
+#contactTop #postalSearch {
+	width:300px;
+	background:#ccc;
+}
+#contactTop #postalSearch #postalCode {
+	padding:5px;
+	width:100%;
+	margin:5px;
+}
 .white td{color:#ffffff;}
 .contactTitle td:first-child{color:#1D4A9F;}
 td.emailRight{text-align:right !important;padding-right:5px;}
