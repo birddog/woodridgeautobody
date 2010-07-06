@@ -847,7 +847,10 @@ body.page-id-43 .dt-showcase .detail .tabs{left:-1px;}
 .pika_navigation a:hover{text-decoration:underline;}
 .pika_navigation{padding-top:10px;clear:both;text-align:center;}
 
-#post-4036 #pikame {display:block; float:none;width:auto;}
+#post-4036 #pikame {display:block; float:none;width:auto;} /**** DONT FUCKING REMOVE THIS !!!!! *****/
+#post-4036 #pika_main {float:none;margin:0 0 10px;} /**** DONT FUCKING REMOVE THIS !!!!! *****/
+
+
 /**********************************************/
 /* Lightbox
 /**********************************************/

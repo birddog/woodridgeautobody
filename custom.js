@@ -390,16 +390,17 @@ jQuery(function($) {
     $('.bird_dog .detail .photos .photo').attr('rel','lightbox');
   }
   
-  
+  	var gmapPostalSearchValue = "Enter Postal Code...";
+	
 	$('input.postalCode').focus(function(){ 
-		if($(this).val() == $(this).attr('value')) {
+		if($(this).val() == gmapPostalSearchValue) {
 			$(this).val('');
 		}
 	});
   
 	$('input.postalCode').blur(function(){
 		if($(this).val() == ''){
-			$(this).val($(this).attr('value'));
+			$(this).val(gmapPostalSearchValue);
 		} 
 	});
 
