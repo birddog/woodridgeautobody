@@ -407,7 +407,7 @@ jQuery(function($) {
 		var gmapIframe = "<iframe id='gmapiframelarge' width='895' height='363' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='" + gmapURL + "'></iframe>";
 		
 		//	create close large gmap iframe
-		var closeIframe = "<div class='iframeclose'></div>";
+		var closeIframe = "<div class='iframeclose'>X</div>";
 		
 		//hide current contact information
 		$('#post-45 #contactTop').find('.cfloat').hide();
