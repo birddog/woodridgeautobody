@@ -724,7 +724,12 @@ body.page-id-206 #site-content > .grid_12 > #post-206{padding:0 0 0 10px;}
 .emailform form{border:none!important;background:white!important;}
 .emailform form table td{border:none!important;background:white!important;}
 
-#contactTop{background-color:#F4F4F4;border:1px solid #999;padding-left:25px;padding-top:15px;width:893px;}
+#contactTop{
+	background-color:#F4F4F4;
+	border:1px solid #999;
+	padding:15px 25px;
+	width:893px;
+}
 #contactTop select{font-size:11px;color:#999;}
 #contactTop select option{padding:2px;color:#999;border:none;}
 #contactTop .cfloat {float:left;margin:0 10px 10px 0;}
