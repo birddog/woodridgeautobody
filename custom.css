@@ -733,7 +733,8 @@ body.page-id-206 #site-content > .grid_12 > #post-206{padding:0 0 0 10px;}
 #contactTop #postalSearch {
 	width:300px;
 	background:#ccc;
-	-moz-border-radius:5px;-webkit-border-radius:5px
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
 }
 #contactTop #postalSearch #postalCode {
 	padding:5px;
