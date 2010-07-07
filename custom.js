@@ -419,9 +419,7 @@ jQuery(function($) {
 		var gmapIframe = "<iframe id='gmapiframelarge' width='708' height='353' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='" + gmapURL + "' style='margin:5px;opacity:0.0;'></iframe>";
 		
 		//	create close large gmap iframe
-		var closeIframe = "<div class='iframeclose'><img src='/wp-content/uploads/btn-close.png' /></div>";
-		
-		var directions = $('#gmapiframelarge #page').find('#panel');
+		var closeIframe = "<div class='iframeclose'><img src='/wp-content/uploads/btn-close.png' /></div>";	
 		
 		//hide current contact information
 		$('#post-45 #contactTop').find('.cfloat').hide();
@@ -430,7 +428,9 @@ jQuery(function($) {
 		$('#post-45 #contactTop').append(gmapIframe);
 		$('#gmapiframelarge').animate({opacity: 1.0}, 'slow');
 		$('#post-45 #contactTop').append(closeIframe);
-		var directionPanel = setTimeout($('#post-45 #contactTop').append(directions), 4000);
+		// Get directions from iframe and Append them
+		var directions = $('#gmapiframelarge #page').find('#panel');
+		var directionPanel = setTimeout('$("#post-45 #contactTop").append(directions);', 4000);
 	 });
   
 });
