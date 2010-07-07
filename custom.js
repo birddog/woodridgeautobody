@@ -429,7 +429,7 @@ jQuery(function($) {
 		$('#gmapiframelarge').animate({opacity: 1.0}, 'slow');
 		$('#post-45 #contactTop').append(closeIframe);
 		// Get directions from iframe and Append them
-		var directions = $('#gmapiframelarge').contents().find('#panel');
+		var directions = setInterval(function(){$('#gmapiframelarge').contents().find('#panel');}, 4000);
 		$("#post-45 #contactTop").append(directions);
 	 });
   
