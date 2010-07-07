@@ -421,23 +421,22 @@ jQuery(function($) {
 		contactArea.find('.cfloat').hide();
 		// Append new map container
 		contactArea.append('<div id="map_canvas"></div><div id="route"></div>');
-		
-		function initialize() {
-			if (GBrowserIsCompatible()) {
-			  map = new GMap2(document.getElementById("map_canvas"));
-			  map.setCenter(new GLatLng(51.050113678,-114.2507), 15);
-			  directionsPanel = document.getElementById("route");
-			  directions = new GDirections(map, directionsPanel);
-			  directions.load("from: " + address + " to: 10860 46 St SE, Calgary, AB T2C 4Y5");
-			}
-		}
-		
-		initialize();
+				
+		gmapInitialize();
 		
 	 });
   
 });
 
+function gmapInitialize() {
+	if (GBrowserIsCompatible()) {
+	  map = new GMap2(document.getElementById("map_canvas"));
+	  map.setCenter(new GLatLng(51.050113678,-114.2507), 15);
+	  directionsPanel = document.getElementById("route");
+	  directions = new GDirections(map, directionsPanel);
+	  directions.load("from: " + address + " to: 10860 46 St SE, Calgary, AB T2C 4Y5");
+	}
+}
 
 /*
 	Lightbox JS: Fullsize Image Overlays 
