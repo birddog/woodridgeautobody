@@ -408,33 +408,36 @@ jQuery(function($) {
 			$(this).remove();
 	});
 	
+
 	$('#postalSearch img').bind('click', function() {
 		// Grab postal code
-		var address = AddressInput.val();
+		var address = AddressInput.val();	
+		// Set gmap variables
+		var map;
+		var directionsPanel;
+		var directions;
+		var contactArea = $('#post-45 #contactTop');
+		// Hide default content
+		contactArea.find('.cfloat').hide();
+		// Append new map container
+		contactArea.append('<div id="map_canvas"></div><div id="route"></div>');
 		
-		// create gmaps url string
-		var gmapURL = "http://maps.google.ca/maps?f=d&amp;source=s_d&amp;saddr=" + address + "&amp;daddr=10860+46+St+SE,+Calgary,+Division+No.+6,+Alberta+T2C+4Y5&amp;output=embed";
-
-		// create iframe
-		var gmapIframe = "<iframe id='gmapiframelarge' width='708' height='353' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='" + gmapURL + "' style='margin:5px;opacity:0.0;'></iframe>";
+		function initialize() {
+			if (GBrowserIsCompatible()) {
+			  map = new GMap2(document.getElementById("map_canvas"));
+			  map.setCenter(new GLatLng(51.050113678,-114.2507), 15);
+			  directionsPanel = document.getElementById("route");
+			  directions = new GDirections(map, directionsPanel);
+			  directions.load("from: " + address + " to: 10860 46 St SE, Calgary, AB T2C 4Y5");
+			}
+		}
 		
-		//	create close large gmap iframe
-		var closeIframe = "<div class='iframeclose'><img src='/wp-content/uploads/btn-close.png' /></div>";	
+		initialize();
 		
-		//hide current contact information
-		$('#post-45 #contactTop').find('.cfloat').hide();
-		
-		//	display iframe of the route
-		$('#post-45 #contactTop').append(gmapIframe);
-		var iframe = $('#gmapiframelarge');
-		iframe.animate({opacity: 1.0}, 'slow');
-		$('#post-45 #contactTop').append(closeIframe);
-		// Get directions from iframe and Append them
-		var directions = function() { iframe.contents().find('#opanel4 #panel4'); };
-		$("#post-45 #contactTop").append(directions);
 	 });
   
 });
+
 
 /*
 	Lightbox JS: Fullsize Image Overlays 
