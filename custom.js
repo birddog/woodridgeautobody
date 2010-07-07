@@ -413,19 +413,22 @@ jQuery(function($) {
 		var address = AddressInput.val();
 		
 		// create gmaps url string
-		var gmapURL = "http://maps.google.ca/maps?f=d&amp;source=s_d&amp;saddr=" + address + "&amp;daddr=10860+46+St+SE,+Calgary,+Division+No.+6,+Alberta+T2C+4Y5&amp;output=embed";
+		var gmapURL = "http://maps.google.ca/maps?f=d&amp;source=s_d&amp;saddr=" + address + "&amp;daddr=10860+46+St+SE,+Calgary,+Division+No.+6,+Alberta+T2C+4Y5&amp;output=js";
 
 		// create iframe
-		var gmapIframe = "<iframe id='gmapiframelarge' width='908' height='353' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='" + gmapURL + "' style='margin:5px;opacity:0.0;'></iframe>";
+		var gmapIframe = "<iframe id='gmapiframelarge' width='708' height='353' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='" + gmapURL + "' style='margin:5px;opacity:0.0;'></iframe>";
 		
 		//	create close large gmap iframe
 		var closeIframe = "<div class='iframeclose'><img src='/wp-content/uploads/btn-close.png' /></div>";
+		
+		var directions = $('#gmapiframelarge html body #main #page #panel #spsizer #opanel4');
 		
 		//hide current contact information
 		$('#post-45 #contactTop').find('.cfloat').hide();
 		
 		//	display iframe of the route
 		$('#post-45 #contactTop').append(gmapIframe);
+		$('#post-45 #contactTop').append(directions);
 		$('#gmapiframelarge').animate({opacity: 1.0}, 'slow');
 		$('#post-45 #contactTop').append(closeIframe);
 	 });
