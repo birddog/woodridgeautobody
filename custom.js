@@ -402,7 +402,10 @@ jQuery(function($) {
 	});
 	
 	//	action for close button
-	$('#post-45 #contactTop .iframeclose').live('click', function() { $(this).parent().find('#gmapiframelarge').remove(); }).remove();
+	$('#post-45 #contactTop .iframeclose').live('click', function() { 
+			$(this).parent().find('#gmapiframelarge').remove(); 
+			$(this).parent().find('.cfloat').show();
+	}).remove();
 	
 	$('#postalSearch img').click(function() {
 		// Grab postal code
