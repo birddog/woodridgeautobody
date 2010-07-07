@@ -745,7 +745,7 @@ body.page-id-206 #site-content > .grid_12 > #post-206{padding:0 0 0 10px;}
 	-webkit-border-radius:5px
 }
 #contactTop #postalSearch .btnlocate { float:left;cursor:pointer; cursor:hand;}
-#contactTop .iframeclose { position:absolute;top:0; right:0;}
+#contactTop .iframeclose { display:block; }
 
 .white td{color:#ffffff;}
 .contactTitle td:first-child{color:#1D4A9F;}
