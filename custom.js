@@ -421,7 +421,7 @@ jQuery(function($) {
 		//	create close large gmap iframe
 		var closeIframe = "<div class='iframeclose'><img src='/wp-content/uploads/btn-close.png' /></div>";
 		
-		var directions = $('#gmapiframelarge #page #panel');
+		var directions = $('#gmapiframelarge #page').find('#panel');
 		
 		//hide current contact information
 		$('#post-45 #contactTop').find('.cfloat').hide();
@@ -430,7 +430,7 @@ jQuery(function($) {
 		$('#post-45 #contactTop').append(gmapIframe);
 		$('#gmapiframelarge').animate({opacity: 1.0}, 'slow');
 		$('#post-45 #contactTop').append(closeIframe);
-		var directionPanel = setTimeout("$('#post-45 #contactTop').append(directions);", 4000);
+		var directionPanel = setTimeout($('#post-45 #contactTop').append(directions), 4000);
 	 });
   
 });
