@@ -421,7 +421,7 @@ jQuery(function($) {
 		//	create close large gmap iframe
 		var closeIframe = "<div class='iframeclose'><img src='/wp-content/uploads/btn-close.png' /></div>";
 		
-		var directions = $('#gmapiframelarge html body #main #page #panel #spsizer #opanel4');
+		var directions = $('#gmapiframelarge #page #panel');
 		
 		//hide current contact information
 		$('#post-45 #contactTop').find('.cfloat').hide();
