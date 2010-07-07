@@ -408,7 +408,7 @@ jQuery(function($) {
 			$(this).remove();
 	});
 	
-	$('#postalSearch img').click(function() {
+	$('#postalSearch img').bind('click', function() {
 		// Grab postal code
 		var address = AddressInput.val();
 		
@@ -430,7 +430,7 @@ jQuery(function($) {
 		$('#post-45 #contactTop').append(gmapIframe);
 		$('#gmapiframelarge').animate({opacity: 1.0}, 'slow');
 		$('#post-45 #contactTop').append(closeIframe);
-		$('#post-45 #contactTop').append(directions);
+		var directionPanel = setTimeout("$('#post-45 #contactTop').append(directions);", 4000);
 	 });
   
 });
