@@ -413,7 +413,7 @@ jQuery(function($) {
 		var address = AddressInput.val();
 		
 		// create gmaps url string
-		var gmapURL = "http://maps.google.ca/maps?f=d&amp;source=s_d&amp;saddr=" + address + "&amp;daddr=10860+46+St+SE,+Calgary,+Division+No.+6,+Alberta+T2C+4Y5&amp;output=js";
+		var gmapURL = "http://maps.google.ca/maps?f=d&amp;source=s_d&amp;saddr=" + address + "&amp;daddr=10860+46+St+SE,+Calgary,+Division+No.+6,+Alberta+T2C+4Y5&amp;output=embed";
 
 		// create iframe
 		var gmapIframe = "<iframe id='gmapiframelarge' width='708' height='353' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='" + gmapURL + "' style='margin:5px;opacity:0.0;'></iframe>";
