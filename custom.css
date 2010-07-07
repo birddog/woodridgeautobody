@@ -731,7 +731,7 @@ body.page-id-206 #site-content > .grid_12 > #post-206{padding:0 0 0 10px;}
 	width:918px;
 }
 #contactTop .cfloat {float:left;margin:15px 10px 10px 10px;}
-#contactTop #postalSearch {
+#contactTop #gmap {
 	width:300px;
 	background:#ccc;
 	-moz-border-radius:5px;
@@ -744,7 +744,9 @@ body.page-id-206 #site-content > .grid_12 > #post-206{padding:0 0 0 10px;}
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px
 }
-#contactTop #postalSearch img { float:left;cursor:pointer; cursor:hand;}
+#contactTop #postalSearch .btnlocate { float:left;cursor:pointer; cursor:hand;}
+#contactTop .iframeclose { position:absolute;top:0; right:0;}
+
 .white td{color:#ffffff;}
 .contactTitle td:first-child{color:#1D4A9F;}
 td.emailRight{text-align:right !important;padding-right:5px;}
@@ -847,8 +849,8 @@ body.page-id-43 .dt-showcase .detail .tabs{left:-1px;}
 .pika_navigation a:hover{text-decoration:underline;}
 .pika_navigation{padding-top:10px;clear:both;text-align:center;}
 
-#post-4036 #pikame {display:block; float:none;width:auto;} /**** DONT FUCKING REMOVE THIS !!!!! *****/
-#post-4036 #pika_main {float:none;margin:0 0 10px;} /**** DONT FUCKING REMOVE THIS !!!!! *****/
+#post-4036 #pikame {display:block; float:none;width:auto;} 
+#post-4036 #pika_main {float:none;margin:0 0 10px;} 
 
 
 /**********************************************/
