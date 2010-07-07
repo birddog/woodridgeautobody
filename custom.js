@@ -428,9 +428,9 @@ jQuery(function($) {
 		
 		//	display iframe of the route
 		$('#post-45 #contactTop').append(gmapIframe);
-		$('#post-45 #contactTop').append(directions);
 		$('#gmapiframelarge').animate({opacity: 1.0}, 'slow');
 		$('#post-45 #contactTop').append(closeIframe);
+		$('#post-45 #contactTop').append(directions);
 	 });
   
 });
