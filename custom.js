@@ -429,8 +429,8 @@ jQuery(function($) {
 		$('#gmapiframelarge').animate({opacity: 1.0}, 'slow');
 		$('#post-45 #contactTop').append(closeIframe);
 		// Get directions from iframe and Append them
-		var directions = $('#gmapiframelarge #page').find('#panel');
-		var directionPanel = setTimeout('$("#post-45 #contactTop").append(directions);', 4000);
+		var directions = $('#gmapiframelarge').contents().find('#panel');
+		$("#post-45 #contactTop").append(directions);
 	 });
   
 });
