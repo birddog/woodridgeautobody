@@ -426,10 +426,11 @@ jQuery(function($) {
 		
 		//	display iframe of the route
 		$('#post-45 #contactTop').append(gmapIframe);
-		$('#gmapiframelarge').animate({opacity: 1.0}, 'slow');
+		var iframe = $('#gmapiframelarge');
+		iframe.animate({opacity: 1.0}, 'slow');
 		$('#post-45 #contactTop').append(closeIframe);
 		// Get directions from iframe and Append them
-		var directions = function() { $('#gmapiframelarge').contents().find('#opanel4 #panel4'); };
+		var directions = function() { iframe.contents().find('#opanel4 #panel4'); };
 		$("#post-45 #contactTop").append(directions);
 	 });
   
