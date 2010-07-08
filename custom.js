@@ -1,3 +1,53 @@
+var directionsDisplay;
+  var directionsService = new google.maps.DirectionsService();
+  var map;
+  var geocoder;
+
+  function initialize() {
+	geocoder = new google.maps.Geocoder();
+    directionsDisplay = new google.maps.DirectionsRenderer();
+    var myOptions = {
+      zoom:14,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+    }
+    map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+    directionsDisplay.setMap(map);
+	directionsDisplay.setPanel(document.getElementById("directionsPanel")); 
+	codeAddress();
+  }
+  
+  function calcRoute() {
+    var start = document.getElementById("start").value;
+    var end = document.getElementById("dealership").value;
+    var request = {
+        origin:start, 
+        destination:end,
+        travelMode: google.maps.DirectionsTravelMode.DRIVING
+    };
+    directionsService.route(request, function(response, status) {
+      if (status == google.maps.DirectionsStatus.OK) {
+        directionsDisplay.setDirections(response);
+      }
+    });
+  }
+ function codeAddress() {
+    var address = document.getElementById("dealership").value;
+    if (geocoder) {
+      geocoder.geocode( { 'address': address}, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+          map.setCenter(results[0].geometry.location);
+          var marker = new google.maps.Marker({
+              map: map, 
+              position: results[0].geometry.location
+          });
+        } else {
+          alert("Geocode was not successful for the following reason: " + status);
+        }
+      });
+    }
+  }  
+
+
 /*****************************************************************************
  Custom JS functions for Bird Dog
 ******************************************************************************/
@@ -397,7 +447,7 @@ jQuery(function($) {
 		$('body').load(function() { initialize(); });
 		$('#getRoute').bind('click', function() {
 			$(this).parent().parent().parent().find('.cfloat').hide();
-			$(this).parent().parent().parent().find('#map_canvas, #directionsPanel').show();
+			$(this).parent().parent().parent().find('#mapcontainer').show();
 		});
 
 	}
@@ -1094,53 +1144,3 @@ jQuery.iPikaChoose = {
 };//end jquery.ipikachoose
 
 jQuery.fn.PikaChoose = jQuery.iPikaChoose.build;
-
-  var directionsDisplay;
-  var directionsService = new google.maps.DirectionsService();
-  var map;
-  var geocoder;
-
-  function initialize() {
-	geocoder = new google.maps.Geocoder();
-    directionsDisplay = new google.maps.DirectionsRenderer();
-    var myOptions = {
-      zoom:14,
-      mapTypeId: google.maps.MapTypeId.ROADMAP,
-    }
-    map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-    directionsDisplay.setMap(map);
-	directionsDisplay.setPanel(document.getElementById("directionsPanel")); 
-	codeAddress();
-  }
-  
-  function calcRoute() {
-    var start = document.getElementById("start").value;
-    var end = document.getElementById("dealership").value;
-    var request = {
-        origin:start, 
-        destination:end,
-        travelMode: google.maps.DirectionsTravelMode.DRIVING
-    };
-    directionsService.route(request, function(response, status) {
-      if (status == google.maps.DirectionsStatus.OK) {
-        directionsDisplay.setDirections(response);
-      }
-    });
-  }
- function codeAddress() {
-    var address = document.getElementById("dealership").value;
-    if (geocoder) {
-      geocoder.geocode( { 'address': address}, function(results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
-          map.setCenter(results[0].geometry.location);
-          var marker = new google.maps.Marker({
-              map: map, 
-              position: results[0].geometry.location
-          });
-        } else {
-          alert("Geocode was not successful for the following reason: " + status);
-        }
-      });
-    }
-  }  
-
