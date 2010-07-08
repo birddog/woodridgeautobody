@@ -404,7 +404,7 @@ jQuery(function($) {
 		$('body').load(function() { gmapinitialize(); });
 
 		// Click event for directions
-		$('#getRoute').bind('click', function() {
+		$('#getRoute').live('click', function() {
 			calcRoute();
 		    $(this).parent().parent().parent().find('#mapcontainer').show();
 			$(this).parent().parent().parent().find('.cfloat').hide();
