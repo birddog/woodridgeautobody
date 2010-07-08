@@ -390,53 +390,21 @@ jQuery(function($) {
     $('.bird_dog .detail .photos .photo').attr('rel','lightbox');
   }
   
-/************************************************************/
-/*			Contact Page Code 												   */
-/************************************************************/
-  	var gmapPostalSearchValue = "Enter your Address...";
-	var AddressInput = $('#postalSearch input#postalCode');
-	AddressInput.focus(function(){ 
-		if($(this).val() == gmapPostalSearchValue) {
-			$(this).val('');
-		}
-	});
-	
-	//	action for close button
-	$('#post-45 #contactTop .iframeclose').live('click', function() { 
-			$(this).parent().find('#gmapiframelarge').remove(); 
-			$(this).parent().find('.cfloat').show();
-			$(this).remove();
-	});
-	
+	/************************************************************/
+	/*			Contact Page Code 												   */
+	/************************************************************/
+	if($('#post-45').length) {
+		initialize();
 
-	$('#postalSearch img').bind('click', function() {
-		// Grab postal code
-		var address = AddressInput.val();	
-		// Set gmap variables
-		var map;
-		var directionsPanel;
-		var directions;
-		var contactArea = $('#post-45 #contactTop');
-		// Hide default content
-		contactArea.find('.cfloat').hide();
-		// Append new map container
-		contactArea.append('<div id="map_canvas"></div><div id="route"></div>');
-				
-		gmapInitialize();
-		
-	 });
-  
+
+	}
+	
+	
 });
 
-function gmapInitialize() {
-	if (GBrowserIsCompatible()) {
-	  map = new GMap2(document.getElementById("map_canvas"));
-	  map.setCenter(new GLatLng(51.050113678,-114.2507), 15);
-	  directionsPanel = document.getElementById("route");
-	  directions = new GDirections(map, directionsPanel);
-	  directions.load("from: " + address + " to: 10860 46 St SE, Calgary, AB T2C 4Y5");
-	}
-}
+
+
+
 
 /*
 	Lightbox JS: Fullsize Image Overlays 
@@ -1123,4 +1091,53 @@ jQuery.iPikaChoose = {
 };//end jquery.ipikachoose
 
 jQuery.fn.PikaChoose = jQuery.iPikaChoose.build;
+
+  var directionDisplay;
+  var directionsService = new google.maps.DirectionsService();
+  var map;
+  var geocoder;
+
+  function initialize() {
+	geocoder = new google.maps.Geocoder();
+    directionsDisplay = new google.maps.DirectionsRenderer();
+    var myOptions = {
+      zoom:14,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+    }
+    map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+    directionsDisplay.setMap(map);
+	directionsDisplay.setPanel(document.getElementById("directionsPanel")); 
+	codeAddress();
+  }
+  
+  function calcRoute() {
+    var start = document.getElementById("start").value;
+    var end = document.getElementById("dealership").value;
+    var request = {
+        origin:start, 
+        destination:end,
+        travelMode: google.maps.DirectionsTravelMode.DRIVING
+    };
+    directionsService.route(request, function(response, status) {
+      if (status == google.maps.DirectionsStatus.OK) {
+        directionsDisplay.setDirections(response);
+      }
+    });
+  }
+ function codeAddress() {
+    var address = document.getElementById("dealership").value;
+    if (geocoder) {
+      geocoder.geocode( { 'address': address}, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+          map.setCenter(results[0].geometry.location);
+          var marker = new google.maps.Marker({
+              map: map, 
+              position: results[0].geometry.location
+          });
+        } else {
+          alert("Geocode was not successful for the following reason: " + status);
+        }
+      });
+    }
+  }  
 
