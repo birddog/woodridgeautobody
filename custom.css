@@ -740,6 +740,7 @@ td.emailRight{text-align:right !important;padding-right:5px;}
 #contactTop .cfloat {float:left;margin:15px 10px 10px 10px;}
 
 #contactTop #mapcontainer{ display:none;}
+#contactTop .preloadmap {position:absolute; left:-9999px;}
 #contactTop #map_canvas { height: 100%; float:left; width:70%;position: relative; background-color: rgb(229, 227, 223); overflow: hidden; z-index: 0; }
 #contactTop #route {height:100%; float:right; width:30%;}
 

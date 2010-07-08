@@ -444,7 +444,11 @@ jQuery(function($) {
 	/*			Contact Page Code 												   */
 	/************************************************************/
 	if($('#post-45').length) {
-		$('body').load(function() { initialize(); });
+		$('body').load(function() { 
+								$('#mapcontainer').addClass('.preloadmap').show();
+								initialize(); 
+								$('#mapcontainer').removeClass('.preloadmap').show();
+		});
 		$('#getRoute').bind('click', function() {
 			$(this).parent().parent().parent().find('.cfloat').hide();
 			$(this).parent().parent().parent().find('#mapcontainer').show();
