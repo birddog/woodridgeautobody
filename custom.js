@@ -396,8 +396,8 @@ jQuery(function($) {
 	if($('#post-45').length) {
 		$('body').load(function() { initialize(); });
 		$('#getRoute').bind('gmap.click', function() {
-			$(this).parent().parent().find('.cfloat').hide();
-			$(this).parent().parent().find('#map_canvas, #directionsPanel').show();
+			$(this).parent().parent().parent().find('.cfloat').hide();
+			$(this).parent().parent().parent().find('#map_canvas, #directionsPanel').show();
 		});
 
 	}
