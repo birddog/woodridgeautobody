@@ -393,7 +393,19 @@ jQuery(function($) {
 	/************************************************************/
 	/*			Contact Page Code 												   */
 	/************************************************************/
-	if($('#post-45').length) {
+	if($('#post-45').length) {		
+		$('body').load(function() { 
+			$('#mapcontainer').addClass('.preloadmap').show();
+			initialize(); 
+			$('#mapcontainer').removeClass('.preloadmap').show();
+		});
+		$('#getRoute').bind('click', function() {
+			calcRoute();
+		    $(this).parent().parent().parent().find('#mapcontainer').show();
+			$(this).parent().parent().parent().find('.cfloat').hide();
+		});
+		
+		
 		var directionsDisplay;
 		var directionsService = new google.maps.DirectionsService();
 		var map;
@@ -441,18 +453,7 @@ jQuery(function($) {
 					}
 				});
 			}
-		}  		
-		
-		$('body').load(function() { 
-								$('#mapcontainer').addClass('.preloadmap').show();
-								initialize(); 
-								$('#mapcontainer').removeClass('.preloadmap').show();
-		});
-		$('#getRoute').bind('click', function() {
-			calcRoute();
-		    $(this).parent().parent().parent().find('#mapcontainer').show();
-			$(this).parent().parent().parent().find('.cfloat').hide();
-		});
+		}  
 
 	}
 	
