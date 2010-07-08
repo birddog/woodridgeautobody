@@ -394,68 +394,75 @@ jQuery(function($) {
 	/*			Contact Page Code 												   */
 	/************************************************************/
 	if($('#post-45').length) {		
-		//	variables for gmap
-		var directionsDisplay;
-		var directionDisplay;
-		var directionsService = new google.maps.DirectionsService();
-		var map;
-		var geocoder;
-		
-		// on load initialize the map
-		$('body').load(function() { 
-									gmapinitialize(); 
-								});
-
-		// Click event for directions
-		$('#getRoute').live('click', function() {
-			calcRoute();
-			$(this).parent().parent().parent().find('.cfloat').hide();
-		});
-		
-		// functions for gmap
-		function gmapinitialize() {
-			geocoder = new google.maps.Geocoder();
-			directionsDisplay = new google.maps.DirectionsRenderer();
-			var myOptions = {
-				zoom:14,
-				mapTypeId: google.maps.MapTypeId.ROADMAP,
+		function gmapDirections() {
+			
+			if(directionsDisplay == null) {
+				setTimeout(gmapDirections, 100);
+				return;
 			}
-			map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-			directionsDisplay.setMap(map);
-			directionsDisplay.setPanel(document.getElementById("directionsPanel")); 
-			codeAddress();
-		}
-		function calcRoute() {
-			var start = document.getElementById("start").value;
-			var end = document.getElementById("dealership").value;
-			var request = {
-				origin:start, 
-				destination:end,
-				travelMode: google.maps.DirectionsTravelMode.DRIVING
-			};
-			directionsService.route(request, function(response, status) {
-				if (status == google.maps.DirectionsStatus.OK) {
-					directionsDisplay.setDirections(response);
-				}
+			
+			//	variables for gmap
+			var directionsDisplay;
+			var directionsService = new google.maps.DirectionsService();
+			var map;
+			var geocoder;
+			
+			// on load initialize the map
+			$('body').load(function() { 
+										initialize(); 
+									});
+	
+			// Click event for directions
+			$('#getRoute').live('click', function() {
+				calcRoute();
+				$(this).parent().parent().parent().find('.cfloat').hide();
 			});
-		}
-		function codeAddress() {
-			var address = document.getElementById("dealership").value;
-			if (geocoder) {
-				geocoder.geocode( { 'address': address}, function(results, status) {
-					if (status == google.maps.GeocoderStatus.OK) {
-						map.setCenter(results[0].geometry.location);
-						var marker = new google.maps.Marker({
-							map: map, 
-							position: results[0].geometry.location
-						});
-					} else {
-						alert("Geocode was not successful for the following reason: " + status);
+			
+			// functions for gmap
+			function initialize() {
+				geocoder = new google.maps.Geocoder();
+				directionsDisplay = new google.maps.DirectionsRenderer();
+				var myOptions = {
+					zoom:14,
+					mapTypeId: google.maps.MapTypeId.ROADMAP,
+				}
+				map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+				directionsDisplay.setMap(map);
+				directionsDisplay.setPanel(document.getElementById("directionsPanel")); 
+				codeAddress();
+			}
+			function calcRoute() {
+				var start = document.getElementById("start").value;
+				var end = document.getElementById("dealership").value;
+				var request = {
+					origin:start, 
+					destination:end,
+					travelMode: google.maps.DirectionsTravelMode.DRIVING
+				};
+				directionsService.route(request, function(response, status) {
+					if (status == google.maps.DirectionsStatus.OK) {
+						directionsDisplay.setDirections(response);
 					}
 				});
 			}
-		}  
-
+			function codeAddress() {
+				var address = document.getElementById("dealership").value;
+				if (geocoder) {
+					geocoder.geocode( { 'address': address}, function(results, status) {
+						if (status == google.maps.GeocoderStatus.OK) {
+							map.setCenter(results[0].geometry.location);
+							var marker = new google.maps.Marker({
+								map: map, 
+								position: results[0].geometry.location
+							});
+						} else {
+							alert("Geocode was not successful for the following reason: " + status);
+						}
+					});
+				}
+			}  
+		}
+		gmapDirections(); // Executes gmap code
 	}
 	
 	
