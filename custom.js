@@ -402,12 +402,13 @@ jQuery(function($) {
 		var geocoder;
 		
 		// on load initialize the map
-		$('body').load(function() { gmapinitialize(); });
+		$('body').load(function() { 
+									gmapinitialize(); 
+								});
 
 		// Click event for directions
 		$('#getRoute').live('click', function() {
 			calcRoute();
-		    $(this).parent().parent().parent().find('#mapcontainer').show();
 			$(this).parent().parent().parent().find('.cfloat').hide();
 		});
 		
