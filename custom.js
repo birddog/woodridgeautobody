@@ -393,6 +393,12 @@ jQuery(function($) {
 	/************************************************************/
 	/*			Contact Page Code 												   */
 	/************************************************************/
+	$('body').load(function() { 
+		if($('#post-45').length) {
+			initialize(); 
+		}
+	});
+	
 	if($('#post-45').length) {		
 	
 			//	variables for gmap
@@ -402,9 +408,7 @@ jQuery(function($) {
 			var map;
 			
 			// on load initialize the map
-			$('body').load(function() { 
-										initialize(); 
-									});
+
 	
 			// Click event for directions
 			$('#getRoute').live('click', function() {
