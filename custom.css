@@ -743,8 +743,9 @@ td.emailRight{text-align:right !important;padding-right:5px;}
 	height:100%;
 	padding:0;
 	margin:0;
+	overflow:hidden;
 }
-#contactTop #map_canvas { height:100%; width:70%;float:left; position: relative; background-color: rgb(229, 227, 223); overflow: hidden; z-index: 0; }
+#contactTop #map_canvas { height:100%; width:70%;float:left; }
 #contactTop #directionsPanel {height:100%; float:right; width:30%;}
 
 
