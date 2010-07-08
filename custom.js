@@ -406,15 +406,15 @@ jQuery(function($) {
 				zoom:14,
 				mapTypeId: google.maps.MapTypeId.ROADMAP,
 			}
-			map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+			map = new google.maps.Map($("map_canvas"), myOptions);
 			directionsDisplay.setMap(map);
-			directionsDisplay.setPanel(document.getElementById("directionsPanel")); 
+			directionsDisplay.setPanel($("directionsPanel")); 
 			codeAddress();
 		}
 		
 		function calcRoute() {
-			var start = document.getElementById("start").value;
-			var end = document.getElementById("dealership").value;
+			var start = $("start").value;
+			var end = $("dealership").value;
 			var request = {
 				origin:start, 
 				destination:end,
@@ -452,7 +452,6 @@ jQuery(function($) {
 			calcRoute();
 		    $(this).parent().parent().parent().find('#mapcontainer').show();
 			$(this).parent().parent().parent().find('.cfloat').hide();
-			
 		});
 
 	}
