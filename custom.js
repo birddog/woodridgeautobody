@@ -396,6 +396,7 @@ jQuery(function($) {
 	if($('#post-45').length) {		
 		//	variables for gmap
 		var directionsDisplay;
+		var directionDisplay;
 		var directionsService = new google.maps.DirectionsService();
 		var map;
 		var geocoder;
