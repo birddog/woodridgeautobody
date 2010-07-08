@@ -744,7 +744,7 @@ td.emailRight{text-align:right !important;padding-right:5px;}
 	margin:0;
 	overflow:hidden;
 }
-#contactTop #map_canvas { height:625px; width:359px;float:left; }
+#contactTop #map_canvas { width:625px; height:359px;float:left; }
 #contactTop #directionsPanel {height:100%; float:right; width:30%;}
 
 
