@@ -738,10 +738,10 @@ td.emailRight{text-align:right !important;padding-right:5px;}
 	position:relative;
 }
 #contactTop .cfloat {float:left;margin:15px 10px 10px 10px;}
+#contactTop #routesearch input {padding:5px; border:1px solid #afafaf;}
 
-#contactTop #mapcontainer{}
-#contactTop .preloadmap {position:absolute; left:-9999px;}
-#contactTop #map_canvas { height: 100%; float:left; width:70%;position: relative; background-color: rgb(229, 227, 223); overflow: hidden; z-index: 0; }
+
+#contactTop #map_canvas { height:100%; width:70%;float:left; position: relative; background-color: rgb(229, 227, 223); overflow: hidden; z-index: 0; }
 #contactTop #route {height:100%; float:right; width:30%;}
 
 
