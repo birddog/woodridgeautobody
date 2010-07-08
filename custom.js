@@ -394,7 +394,7 @@ jQuery(function($) {
 	/*			Contact Page Code 												   */
 	/************************************************************/
 	if($('#post-45').length) {		
-		$('body').load(function() { initialize(); });
+		$('body').load(function() { gmapinitialize(); });
 		$('#getRoute').bind('click', function() {
 			calcRoute();
 		    $(this).parent().parent().parent().find('#mapcontainer').show();
@@ -402,36 +402,36 @@ jQuery(function($) {
 		});
 		
 		
-		var directionsDisplay;
+		var directionDisplay;
 		var directionsService = new google.maps.DirectionsService();
 		var map;
 		var geocoder;
 		
-		function initialize() {
+		function gmapinitialize() {
 			geocoder = new google.maps.Geocoder();
 			directionsDisplay = new google.maps.DirectionsRenderer();
 			var myOptions = {
 				zoom:14,
 				mapTypeId: google.maps.MapTypeId.ROADMAP,
 			}
-			map = new google.maps.Map($("map_canvas"), myOptions);
+			map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 			directionsDisplay.setMap(map);
-			directionsDisplay.setPanel($("directionsPanel")); 
+			directionsDisplay.setPanel(document.getElementById("directionsPanel")); 
 			codeAddress();
 		}
 		
 		function calcRoute() {
-			var start = $("start").value;
-			var end = $("dealership").value;
+			var start = document.getElementById("start").value;
+			var end = document.getElementById("dealership").value;
 			var request = {
 				origin:start, 
 				destination:end,
 				travelMode: google.maps.DirectionsTravelMode.DRIVING
 			};
 			directionsService.route(request, function(response, status) {
-			if (status == google.maps.DirectionsStatus.OK) {
-				directionsDisplay.setDirections(response);
-			}
+				if (status == google.maps.DirectionsStatus.OK) {
+					directionsDisplay.setDirections(response);
+				}
 			});
 		}
 		function codeAddress() {
