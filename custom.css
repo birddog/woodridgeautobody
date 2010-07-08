@@ -740,7 +740,7 @@ td.emailRight{text-align:right !important;padding-right:5px;}
 #contactTop #routesearch #start {padding:5px;border:1px solid #afafaf;width:150px;}
 #contactTop #routesearch #getRoute {padding:4px;border:1px solid #afafaf;}
 #contactTop #mapholder{
-	padding:0;
+	padding:5px;
 	margin:0;
 	overflow:hidden;
 	display:none;
