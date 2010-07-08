@@ -393,7 +393,7 @@ jQuery(function($) {
 	/************************************************************/
 	/*			Contact Page Code 												   */
 	/************************************************************/
-	$('body').load(function() { 
+	$(window).load(function() { 
 			// on load initialize the map
 			initialize(); 
 	});
