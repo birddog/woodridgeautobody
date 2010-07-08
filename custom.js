@@ -394,18 +394,12 @@ jQuery(function($) {
 	/*			Contact Page Code 												   */
 	/************************************************************/
 	if($('#post-45').length) {		
-		function gmapDirections() {
-			
-			if(directionsDisplay == null) {
-				setTimeout(gmapDirections, 100);
-				return;
-			}
-			
+	
 			//	variables for gmap
-			var directionsDisplay;
+			var directionsDisplay = new google.maps.DirectionsRenderer();
 			var directionsService = new google.maps.DirectionsService();
+			var geocoder = new google.maps.Geocoder();
 			var map;
-			var geocoder;
 			
 			// on load initialize the map
 			$('body').load(function() { 
@@ -420,8 +414,6 @@ jQuery(function($) {
 			
 			// functions for gmap
 			function initialize() {
-				geocoder = new google.maps.Geocoder();
-				directionsDisplay = new google.maps.DirectionsRenderer();
 				var myOptions = {
 					zoom:14,
 					mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -460,9 +452,7 @@ jQuery(function($) {
 						}
 					});
 				}
-			}  
-		}
-		gmapDirections(); // Executes gmap code
+		}  
 	}
 	
 	
