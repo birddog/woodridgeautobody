@@ -394,19 +394,23 @@ jQuery(function($) {
 	/*			Contact Page Code 												   */
 	/************************************************************/
 	if($('#post-45').length) {		
+		//	variables for gmap
+		var directionsDisplay;
+		var directionsService = new google.maps.DirectionsService();
+		var map;
+		var geocoder;
+		
+		// on load initialize the map
 		$('body').load(function() { gmapinitialize(); });
+
+		// Click event for directions
 		$('#getRoute').bind('click', function() {
 			calcRoute();
 		    $(this).parent().parent().parent().find('#mapcontainer').show();
 			$(this).parent().parent().parent().find('.cfloat').hide();
 		});
 		
-		
-		var directionsDisplay;
-		var directionsService = new google.maps.DirectionsService();
-		var map;
-		var geocoder;
-		
+		// functions for gmap
 		function gmapinitialize() {
 			geocoder = new google.maps.Geocoder();
 			directionsDisplay = new google.maps.DirectionsRenderer();
@@ -419,7 +423,6 @@ jQuery(function($) {
 			directionsDisplay.setPanel(document.getElementById("directionsPanel")); 
 			codeAddress();
 		}
-		
 		function calcRoute() {
 			var start = document.getElementById("start").value;
 			var end = document.getElementById("dealership").value;
