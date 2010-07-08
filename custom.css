@@ -741,7 +741,7 @@ td.emailRight{text-align:right !important;padding-right:5px;}
 #contactTop #routesearch #getRoute {padding:4px;border:1px solid #afafaf;}
 
 #contactTop #map_canvas { height:100%; width:70%;float:left; position: relative; background-color: rgb(229, 227, 223); overflow: hidden; z-index: 0; }
-#contactTop #route {height:100%; float:right; width:30%;}
+#contactTop #directionsPanel {height:100%; float:right; width:30%;}
 
 
 
