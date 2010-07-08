@@ -394,7 +394,7 @@ jQuery(function($) {
 	/*			Contact Page Code 												   */
 	/************************************************************/
 	if($('#post-45').length) {
-		initialize();
+		$('body').load(function() { initialize(); });
 
 
 	}
