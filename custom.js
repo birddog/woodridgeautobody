@@ -452,6 +452,7 @@ jQuery(function($) {
 		$('#getRoute').live('click', function() {
 			calcRoute();
 			$(this).parent().parent().parent().find('.cfloat').hide();
+			$(this).parent().parent().parent().find('#mapholder').show();
 		});
 		
 	}
