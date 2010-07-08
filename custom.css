@@ -1,8 +1,8 @@
 /**************************************
 * BASIC CSS for Village Honda
 **************************************/
-html{overflow-y:scroll;height:100%;}/* adds scrollbar and prevents jumping of content */
-body{font-family:Arial,"Helvetica Neue",Helvetica,sans-serif;font-size:11px;line-height:1.25;background-image:url('/wp-content/uploads/2010/03/bgWDR1.jpg');height:100%;}
+html{overflow-y:scroll;}/* adds scrollbar and prevents jumping of content */
+body{font-family:Arial,"Helvetica Neue",Helvetica,sans-serif;font-size:11px;line-height:1.25;background-image:url('/wp-content/uploads/2010/03/bgWDR1.jpg');}
 body.page{padding:0;}
 body.logged-in {margin-top:12px;}
 a, a:active{color:#1D4A9F;outline:0;text-decoration:none;}
@@ -740,12 +740,11 @@ td.emailRight{text-align:right !important;padding-right:5px;}
 #contactTop #routesearch #start {padding:5px;border:1px solid #afafaf;width:150px;}
 #contactTop #routesearch #getRoute {padding:4px;border:1px solid #afafaf;}
 #contactTop #mapholder{
-	height:100%;
 	padding:0;
 	margin:0;
 	overflow:hidden;
 }
-#contactTop #map_canvas { height:100%; width:70%;float:left; }
+#contactTop #map_canvas { height:625px; width359px;float:left; }
 #contactTop #directionsPanel {height:100%; float:right; width:30%;}
 
 
