@@ -395,7 +395,7 @@ jQuery(function($) {
 	/************************************************************/
 	if($('#post-45').length) {
 		$('body').load(function() { initialize(); });
-		$('#getRoute').bind('gmap.click', function() {
+		$('#getRoute').bind('click', function() {
 			$(this).parent().parent().parent().find('.cfloat').hide();
 			$(this).parent().parent().parent().find('#map_canvas, #directionsPanel').show();
 		});
@@ -1095,7 +1095,7 @@ jQuery.iPikaChoose = {
 
 jQuery.fn.PikaChoose = jQuery.iPikaChoose.build;
 
-  var directionDisplay;
+  var directionsDisplay;
   var directionsService = new google.maps.DirectionsService();
   var map;
   var geocoder;
