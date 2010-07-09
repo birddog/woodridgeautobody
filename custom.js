@@ -404,6 +404,7 @@ jQuery(function($) {
 		  var map;
 		  var map2;
 		  var geocoder;
+		  var address = document.getElementById("dealership").value;
 		
 		  function initialize() {
 			geocoder = new google.maps.Geocoder();
@@ -411,6 +412,11 @@ jQuery(function($) {
 			var myOptions = {
 			  zoom:14,
 			  mapTypeId: google.maps.MapTypeId.ROADMAP,
+			}
+			var myOptions2 = {
+				zoom: 14,
+				mapTypeId: google.maps.MapTypeId.ROADMAP,
+				center: address
 			}
 			map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 			map2 = new google.maps.Map(document.getElementById("map_canvas2"), myOptions);
@@ -444,7 +450,6 @@ jQuery(function($) {
 			});
 		  }
 		 function codeAddress() {
-			var address = document.getElementById("dealership").value;
 			if (geocoder) {
 			  geocoder.geocode( { 'address': address}, function(results, status) {
 				if (status == google.maps.GeocoderStatus.OK) {
