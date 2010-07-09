@@ -439,7 +439,7 @@ jQuery(function($) {
 			
 				  //map.setCenter(results[0].geometry.location);
 				  
-					var bounds = new GLatLngBounds;
+					var bounds = new GLatLngBounds();
 					for (var i=0; i<markers.length; i++) {
 					bounds.extend(markers[i].point);
 					}
