@@ -433,11 +433,11 @@ jQuery(function($) {
 					// added to center map in this function
 					var bounds = new GLatLngBounds();
 					for (var i = 1; i < markers.length; i++) {
-						bounds.extend(markers[i].getPoint());
-					}
-					var center = bounds.getCenter();
-					var zoom = map.getBoundsZoomLevel(bounds);
-					map.setCenter(center,zoom);				
+						var loc = markers[i];
+						var mylatlng = new google.maps.LatLng(loc[1], loc[2]);
+						bounds.extend(mylatlng);
+						map.fitBounds(bounds);
+					}		
 			  }
 			});
 		  }
@@ -447,23 +447,18 @@ jQuery(function($) {
 			  geocoder.geocode( { 'address': address}, function(results, status) {
 				if (status == google.maps.GeocoderStatus.OK) {
 			
-				  //map.setCenter(results[0].geometry.location);
-				  
-					var bounds = new GLatLngBounds();
-					for (var i = 1; i < markers.length; i++) {
-						bounds.extend(markers[i].getPoint());
-					}
-					var center = bounds.getCenter();
-					var zoom = map.getBoundsZoomLevel(bounds);
-					map.setCenter(center,zoom);
-				  
+				  map.setCenter(results[0].geometry.location);
+
 				  var marker = new google.maps.Marker({
 					  map: map, 
-					  position: results[0].geometry.location
+					  position: results[0].geometry.location,
+					  center: address
 				  });
+				  
 				  var marker2 = new google.maps.Marker({
-						map:map2,
-						position: results[0].geometry.location
+						map: map2,
+						position: results[0].geometry.location,
+						center: address
 				  });
 				} else {
 				  alert("Geocode was not successful for the following reason: " + status);
