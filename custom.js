@@ -403,7 +403,6 @@ jQuery(function($) {
 		  var directionsService = new google.maps.DirectionsService();
 		  var map;
 		  var geocoder;
-		  var bounds = new GLatLngBounds();
 		
 		  function initialize() {
 			geocoder = new google.maps.Geocoder();
@@ -438,15 +437,8 @@ jQuery(function($) {
 			  geocoder.geocode( { 'address': address}, function(results, status) {
 				if (status == google.maps.GeocoderStatus.OK) {
 			
-				  //map.setCenter(results[0].geometry.location);
+				  map.setCenter(results[0].geometry.location);
 				  
-					/*		Better Centering for map */
-					for (var i=0; i<markers.length; i++) {
-						bounds.extend(markers[i].point);
-					}
-					/* map.setZoom(map.getBoundsZoomLevel(bounds)); */
-					map.setCenter(bounds.getCenter(), map.getBoundsZoomLevel(bounds)); 
-					
 				  var marker = new google.maps.Marker({
 					  map: map, 
 					  position: results[0].geometry.location
