@@ -437,7 +437,15 @@ jQuery(function($) {
 			  geocoder.geocode( { 'address': address}, function(results, status) {
 				if (status == google.maps.GeocoderStatus.OK) {
 			
-				  map.setCenter(results[0].geometry.location);
+				  //map.setCenter(results[0].geometry.location);
+				  
+					var bounds = new GLatLngBounds();
+					for (var i = 1; i < markers.length; i++) {
+						bounds.extend(markers[i].getPoint());
+					}
+					var center = bounds.getCenter();
+					var zoom = map.getBoundsZoomLevel(bounds);
+					map.setCenter(center,zoom);
 				  
 				  var marker = new google.maps.Marker({
 					  map: map, 
