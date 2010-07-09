@@ -463,8 +463,13 @@ jQuery(function($) {
 			calcRoute();
 			$(this).parent().parent().parent().find('.cfloat').hide();
 			$(this).parent().parent().parent().find('#mapholder').show();
+			$(this).parent().parent().parent().append('<img src="/wp-content/uploads/btn-close.png" id="btnclose" />');
 		});
-		
+		$('#btnclose').live('click', function() {
+			$(this).parent().parent().parent().find('.cfloat').show();
+			$(this).parent().parent().parent().find('#mapholder').hide();
+			$(this).parent().parent().parent().find('#btnclose').remove();
+		});	
 	}
 	
 	
