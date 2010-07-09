@@ -411,15 +411,10 @@ jQuery(function($) {
 			directionsDisplay = new google.maps.DirectionsRenderer();
 			var myOptions = {
 			  zoom:14,
-			  mapTypeId: google.maps.MapTypeId.ROADMAP,
-			}
-			var myOptions2 = {
-				zoom: 14,
-				mapTypeId: google.maps.MapTypeId.ROADMAP,
-				center: address
+			  mapTypeId: google.maps.MapTypeId.ROADMAP
 			}
 			map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-			map2 = new google.maps.Map(document.getElementById("map_canvas2"), myOptions2);
+			map2 = new google.maps.Map(document.getElementById("map_canvas2"), myOptions);
 			directionsDisplay.setMap(map);
 			directionsDisplay.setPanel(document.getElementById("directionsPanel")); 
 			codeAddress();
@@ -459,14 +454,12 @@ jQuery(function($) {
 				  var marker = new google.maps.Marker({
 					  map: map, 
 					  position: results[0].geometry.location,
-					  center: address
 				  });
-				  
 				  var marker2 = new google.maps.Marker({
 						map: map2,
 						position: results[0].geometry.location,
-						center: address
 				  });
+				  
 				} else {
 				  alert("Geocode was not successful for the following reason: " + status);
 				}
