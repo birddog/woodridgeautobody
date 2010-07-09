@@ -430,14 +430,16 @@ jQuery(function($) {
 			directionsService.route(request, function(response, status) {
 			  if (status == google.maps.DirectionsStatus.OK) {
 				directionsDisplay.setDirections(response);
+				
 					// added to center map in this function
-					var bounds = new GLatLngBounds();
+					var bounds = new google.maps.LatLngBounds();
 					for (var i = 1; i < markers.length; i++) {
 						var loc = markers[i];
-						var mylatlng = new google.maps.LatLng(loc[1], loc[2]);
-						bounds.extend(mylatlng);
+						var myLatLng = new google.maps.LatLng(loc[1], loc[2]);
+						bounds.extend(myLatLng);
 						map.fitBounds(bounds);
 					}		
+					
 			  }
 			});
 		  }
@@ -448,7 +450,7 @@ jQuery(function($) {
 				if (status == google.maps.GeocoderStatus.OK) {
 			
 				  map.setCenter(results[0].geometry.location);
-
+				  					
 				  var marker = new google.maps.Marker({
 					  map: map, 
 					  position: results[0].geometry.location,
