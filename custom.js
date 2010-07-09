@@ -403,7 +403,7 @@ jQuery(function($) {
 		  var directionsService = new google.maps.DirectionsService();
 		  var map;
 		  var geocoder;
-		  var bounds = null;
+		  var bounds = new GLatLngBounds();
 		
 		  function initialize() {
 			geocoder = new google.maps.Geocoder();
@@ -441,7 +441,6 @@ jQuery(function($) {
 				  //map.setCenter(results[0].geometry.location);
 				  
 					/*		Better Centering for map */
-					bounds = new GLatLngBounds();
 					for (var i=0; i<markers.length; i++) {
 						bounds.extend(markers[i].point);
 					}
