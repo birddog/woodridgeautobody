@@ -419,7 +419,7 @@ jQuery(function($) {
 				center: address
 			}
 			map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-			map2 = new google.maps.Map(document.getElementById("map_canvas2"), myOptions);
+			map2 = new google.maps.Map(document.getElementById("map_canvas2"), myOptions2);
 			directionsDisplay.setMap(map);
 			directionsDisplay.setPanel(document.getElementById("directionsPanel")); 
 			codeAddress();
