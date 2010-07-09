@@ -402,6 +402,7 @@ jQuery(function($) {
 		  var directionDisplay;
 		  var directionsService = new google.maps.DirectionsService();
 		  var map;
+		  var map2;
 		  var geocoder;
 		
 		  function initialize() {
@@ -412,6 +413,7 @@ jQuery(function($) {
 			  mapTypeId: google.maps.MapTypeId.ROADMAP,
 			}
 			map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+			map2 = new google.maps.Map(document.getElementById("map_canvas2"), myOptions);
 			directionsDisplay.setMap(map);
 			directionsDisplay.setPanel(document.getElementById("directionsPanel")); 
 			codeAddress();
@@ -428,6 +430,14 @@ jQuery(function($) {
 			directionsService.route(request, function(response, status) {
 			  if (status == google.maps.DirectionsStatus.OK) {
 				directionsDisplay.setDirections(response);
+					// added to center map in this function
+					var bounds = new GLatLngBounds();
+					for (var i = 1; i < markers.length; i++) {
+						bounds.extend(markers[i].getPoint());
+					}
+					var center = bounds.getCenter();
+					var zoom = map.getBoundsZoomLevel(bounds);
+					map.setCenter(center,zoom);				
 			  }
 			});
 		  }
@@ -450,6 +460,10 @@ jQuery(function($) {
 				  var marker = new google.maps.Marker({
 					  map: map, 
 					  position: results[0].geometry.location
+				  });
+				  var marker2 = new google.maps.Marker({
+						map:map2,
+						position: results[0].geometry.location
 				  });
 				} else {
 				  alert("Geocode was not successful for the following reason: " + status);
