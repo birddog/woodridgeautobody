@@ -196,11 +196,15 @@ td#footer a:hover{color:#1D4A9F;font-weight:bold;text-decoration:none;}
 	width:250px;
 	font-size:10px;
 	padding:5px;
-	background-color:#eee;
+	color:#777;
+	background-color:#F4F4F4;
 	border:1px solid #999;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 }
+.block h3 {}
+.block a {text-decoration:underline;}
+
 /**************************************
 * Slideshow Widget
 **************************************/
