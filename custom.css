@@ -34,7 +34,7 @@ blockquote {
 	background:url(/wp-content/uploads/openquote.png) no-repeat 0 10px #fff;
 }
 blockquote cite {display:block;text-align:right;}
-.block {float:right;}
+
 /**************************************
 * General Layout Regions
 **************************************/
@@ -188,6 +188,13 @@ td#footer a:hover{color:#1D4A9F;font-weight:bold;text-decoration:none;}
 	color:#666;
 }
 .quickContact ul li.special{width:150px;border-top:1px #333 solid;}
+/**************************************
+* Content area sidebar blocks
+**************************************/
+.block {
+	float:right;
+	width:400px;
+}
 /**************************************
 * Slideshow Widget
 **************************************/
