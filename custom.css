@@ -202,7 +202,9 @@ td#footer a:hover{color:#1D4A9F;font-weight:bold;text-decoration:none;}
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 }
-.block h3 {}
+.block h3 {
+	line-height:1.4em;
+}
 .block a {text-decoration:underline;}
 
 /**************************************
