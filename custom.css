@@ -193,7 +193,9 @@ td#footer a:hover{color:#1D4A9F;font-weight:bold;text-decoration:none;}
 **************************************/
 .block {
 	float:right;
-	width:400px;
+	width:225px;
+	font-size:10px;
+	padding:5px;
 }
 /**************************************
 * Slideshow Widget
