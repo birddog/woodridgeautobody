@@ -34,6 +34,7 @@ blockquote {
 	background:url(/wp-content/uploads/openquote.png) no-repeat 0 10px #fff;
 }
 blockquote cite {display:block;text-align:right;}
+.block {float:right;}
 /**************************************
 * General Layout Regions
 **************************************/
