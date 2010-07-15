@@ -407,6 +407,7 @@ jQuery(function($) {
 		  var map2;
 		  var geocoder;
 		  var address = document.getElementById("dealership").value;
+		  var start = document.getElementById("start").value;
 		
 		  function initialize() {
 			geocoder = new google.maps.Geocoder();
@@ -463,6 +464,21 @@ jQuery(function($) {
 				  alert("Geocode was not successful for the following reason: " + status);
 				}
 			  });
+			  geocoder.geocode({'address': start}, function(results, status) {
+				if (status == google.maps.GeocoderStatus.OK){
+			
+				  map2.setCenter(results[0].geometry.location);
+				  					
+				  var marker2 = new google.maps.Marker({
+					  map: map2, 
+					  position: results[0].geometry.location,
+				  });					
+					
+				} else {
+					alert("Geocode was not successful for the following reason: " + status);	
+				}
+				
+				});
 			}
 		  }  
 	
