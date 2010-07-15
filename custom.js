@@ -417,10 +417,6 @@ jQuery(function($) {
 			  mapTypeId: google.maps.MapTypeId.ROADMAP
 			}
 			
-			var point = new GPoint();
-			var market = new GMarker(point);
-			map.addOverlay(marker);
-			
 			map = new google.maps.Map(document.getElementById("map_canvas2"), myOptions);
 			map2 = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 			
