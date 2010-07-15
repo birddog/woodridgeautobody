@@ -435,7 +435,7 @@ jQuery(function($) {
 			directionsService.route(request, function(response, status) {
 			  if (status == google.maps.DirectionsStatus.OK) {
 				directionsDisplay.setDirections(response);
-				
+					var markers;
 					// added to center map in this function
 					var bounds = new google.maps.LatLngBounds();
 					for (var i = 1; i < markers.length; i++) {
