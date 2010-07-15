@@ -416,9 +416,15 @@ jQuery(function($) {
 			  zoom:14,
 			  mapTypeId: google.maps.MapTypeId.ROADMAP
 			}
+			
+			var point = new GPoint();
+			var market = new GMarker(point);
+			map.addOverlay(marker);
+			
 			map = new google.maps.Map(document.getElementById("map_canvas2"), myOptions);
 			map2 = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-			directionsDisplay.setMap(map);
+			
+			directionsDisplay.setMap(map2);
 			directionsDisplay.setPanel(document.getElementById("directionsPanel")); 
 			codeAddress();
 		  }
@@ -451,35 +457,48 @@ jQuery(function($) {
 		  }
 		 function codeAddress() {
 			if (geocoder) {
-			  geocoder.geocode( { 'address': address}, function(results, status) {
-				if (status == google.maps.GeocoderStatus.OK) {
-			
-				  map.setCenter(results[0].geometry.location);
-				  					
-				  var marker = new google.maps.Marker({
-					  map: map, 
-					  position: results[0].geometry.location,
-				  });
-				  
-				} else {
-				  alert("Geocode was not successful for the following reason: " + status);
-				}
-			  });
-			  geocoder.geocode({'address': start}, function(results, status) {
-				if (status == google.maps.GeocoderStatus.OK){
-			
-				  map2.setCenter(results[0].geometry.location);
-				  					
-				  var marker2 = new google.maps.Marker({
-					  map: map2, 
-					  position: results[0].geometry.location,
-				  });					
+				geocoder.geocode( { 'address': address}, function(results, status) {
+					if (status == google.maps.GeocoderStatus.OK) {
 					
-				} else {
-					alert("Geocode was not successful for the following reason: " + status);	
-				}
-				
+					  map.setCenter(results[0].geometry.location);
+										
+					  var marker = new google.maps.Marker({
+						  map: map, 
+						  position: results[0].geometry.location,
+					  });
+					  
+					} else {
+					  alert("Geocode was not successful for the following reason: " + status);
+					}
 				});
+				geocoder.geocode({'address': start}, function(results, status) {
+					if (status == google.maps.GeocoderStatus.OK){
+					
+					  map2.setCenter(results[0].geometry.location);
+										
+					  var marker2 = new google.maps.Marker({
+						  map: map2, 
+						  position: results[0].geometry.location,
+					  });					
+						
+					} else {
+						alert("Geocode was not successful for the following reason: " + status);	
+					}				
+				});
+				geocoder.geocode({'address': end}, function(results, status) {
+					if (status == google.maps.GeocoderStatus.OK){
+					
+					  map2.setCenter(results[0].geometry.location);
+										
+					  var marker2 = new google.maps.Marker({
+						  map: map2, 
+						  position: results[0].geometry.location,
+					  });					
+						
+					} else {
+						alert("Geocode was not successful for the following reason: " + status);	
+					}				
+				});				
 			}
 		  }  
 	
