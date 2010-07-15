@@ -408,6 +408,7 @@ jQuery(function($) {
 		  var geocoder;
 		  var address = document.getElementById("dealership").value;
 		  var start = document.getElementById("start").value;
+			var marker;
 		
 		  function initialize() {
 			geocoder = new google.maps.Geocoder();
@@ -419,7 +420,20 @@ jQuery(function($) {
 			
 			map = new google.maps.Map(document.getElementById("map_canvas2"), myOptions);
 			map2 = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+			var contentString = '<h1>Woodridge Autobody</h1>' + 
+				'<p>10860 46 Street SE, Calgary AB</p>' +
+				'<p>Telephone: 403.536.0518</p>' +
+				'<p>Email: <a href="mailto:info@woodridgeautobody.com">info@woodridgeautobody.com</a></p>';
+				
+			var infowindow = new google.maps.InfoWindow({
+				content: contentString
+			});
 			
+			google.maps.event.addListener(marker, 'load', function() {
+			  infowindow.open(map,marker);
+			});
+
 			directionsDisplay.setMap(map2);
 			directionsDisplay.setPanel(document.getElementById("directionsPanel")); 
 			codeAddress();
@@ -437,10 +451,10 @@ jQuery(function($) {
 			directionsService.route(request, function(response, status) {
 			  if (status == google.maps.DirectionsStatus.OK) {
 				directionsDisplay.setDirections(response);
-					var markers;
+
 					// added to center map in this function
 					var bounds = new google.maps.LatLngBounds();
-					for (var i = 1; i < markers.length; i++) {
+					for (var i = 1; i < marker.length; i++) {
 						var loc = markers[i];
 						var myLatLng = new google.maps.LatLng(loc[1], loc[2]);
 						bounds.extend(myLatLng);
@@ -458,7 +472,7 @@ jQuery(function($) {
 					
 					  map.setCenter(results[0].geometry.location);
 										
-					  var marker = new google.maps.Marker({
+					  marker = new google.maps.Marker({
 						  map: map, 
 						  position: results[0].geometry.location,
 					  });
@@ -486,8 +500,8 @@ jQuery(function($) {
 					
 					  map2.setCenter(results[0].geometry.location);
 										
-					  var marker2 = new google.maps.Marker({
-						  map: map2, 
+					  var marker3 = new google.maps.Marker({
+						  map: map3, 
 						  position: results[0].geometry.location,
 					  });					
 						
