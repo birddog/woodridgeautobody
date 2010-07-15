@@ -500,7 +500,7 @@ jQuery(function($) {
 					  map2.setCenter(results[0].geometry.location);
 										
 					  var marker3 = new google.maps.Marker({
-						  map: map3, 
+						  map: map2, 
 						  position: results[0].geometry.location,
 					  });					
 						
