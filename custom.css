@@ -516,7 +516,7 @@ td .form {padding: 0 10px 10px;}
 .estimate label {width:90px;}
 
 .form select {width:143px;}
-.form  input, select {font-size:11px;vertical-align:middle;}
+.form  input, .form select {font-size:11px;vertical-align:middle;padding:2px;}
 .contactusSmall textarea {width:300px;}
 .estimate textarea {width:800px;}
 .contactus textarea {width:800px;}
