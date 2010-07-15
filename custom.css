@@ -519,12 +519,7 @@ td .form {padding: 0 10px 10px;}
 
 .form select {width:143px;}
 .form  input, select {font-size:11px;vertical-align:middle;}
-textarea {width:50%;}
 .contactusSmall textarea {width:300px;}
-.preownedtestdrive textarea, .newtestdrive textarea,
-.contactus textarea, . {width:600px;}
-.partsRequest textarea, .contactFinance textarea, .contactFleet textarea { width:705px;}
-.collisionCenter textarea {360px;}
 .estimate textarea {width:800px;}
 
 /* form validation */
