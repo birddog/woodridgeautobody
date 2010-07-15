@@ -416,6 +416,7 @@ jQuery(function($) {
 			  mapTypeId: google.maps.MapTypeId.ROADMAP
 			}
 			map = new google.maps.Map(document.getElementById("map_canvas2"), myOptions);
+			map2 = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 			directionsDisplay.setMap(map);
 			directionsDisplay.setPanel(document.getElementById("directionsPanel")); 
 			codeAddress();
@@ -429,7 +430,7 @@ jQuery(function($) {
 				destination:end,
 				travelMode: google.maps.DirectionsTravelMode.DRIVING
 			};
-			map2 = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+			
 			directionsService.route(request, function(response, status) {
 			  if (status == google.maps.DirectionsStatus.OK) {
 				directionsDisplay.setDirections(response);
