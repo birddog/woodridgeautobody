@@ -519,6 +519,7 @@ td .form {padding: 0 10px 10px;}
 .form  input, select {font-size:11px;vertical-align:middle;}
 .contactusSmall textarea {width:300px;}
 .estimate textarea {width:800px;}
+.contactus textarea {width:800px;}
 
 /* form validation */
 span.wpcf7-not-valid-tip {
