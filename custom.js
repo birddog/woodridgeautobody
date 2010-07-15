@@ -429,10 +429,6 @@ jQuery(function($) {
 			var infowindow = new google.maps.InfoWindow({
 				content: contentString
 			});
-			
-			google.maps.event.addListener(marker, 'load', function() {
-			  infowindow.open(map,marker);
-			});
 
 			directionsDisplay.setMap(map2);
 			directionsDisplay.setPanel(document.getElementById("directionsPanel")); 
@@ -476,6 +472,9 @@ jQuery(function($) {
 						  map: map, 
 						  position: results[0].geometry.location,
 					  });
+					google.maps.event.addListener(marker, 'load', function() {
+						infowindow.open(map,marker);
+					});
 					  
 					} else {
 					  alert("Geocode was not successful for the following reason: " + status);
