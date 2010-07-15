@@ -393,10 +393,12 @@ jQuery(function($) {
 	/************************************************************/
 	/*			Contact Page Code 												   */
 	/************************************************************/
-	$(window).load(function() { 
-			// on load initialize the map
-			initialize(); 
-	});
+	if($('#post-45').length) {	
+		$(window).load(function() { 
+				// on load initialize the map
+				initialize(); 
+		});
+	}
 	
 	if($('#post-45').length) {		
 		  var directionDisplay;
@@ -413,8 +415,7 @@ jQuery(function($) {
 			  zoom:14,
 			  mapTypeId: google.maps.MapTypeId.ROADMAP
 			}
-			map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-			map2 = new google.maps.Map(document.getElementById("map_canvas2"), myOptions);
+			map = new google.maps.Map(document.getElementById("map_canvas2"), myOptions);
 			directionsDisplay.setMap(map);
 			directionsDisplay.setPanel(document.getElementById("directionsPanel")); 
 			codeAddress();
@@ -454,10 +455,6 @@ jQuery(function($) {
 				  var marker = new google.maps.Marker({
 					  map: map, 
 					  position: results[0].geometry.location,
-				  });
-				  var marker2 = new google.maps.Marker({
-						map: map2,
-						position: results[0].geometry.location,
 				  });
 				  
 				} else {
