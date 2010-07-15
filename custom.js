@@ -447,6 +447,7 @@ jQuery(function($) {
 					
 			  }
 			});
+			codeAddress();
 		  }
 		 function codeAddress() {
 			if (geocoder) {
