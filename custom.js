@@ -481,7 +481,7 @@ jQuery(function($) {
 						alert("Geocode was not successful for the following reason: " + status);	
 					}				
 				});
-				geocoder.geocode({'address': end}, function(results, status) {
+				geocoder.geocode({'address': address}, function(results, status) {
 					if (status == google.maps.GeocoderStatus.OK){
 					
 					  map2.setCenter(results[0].geometry.location);
