@@ -415,7 +415,7 @@ jQuery(function($) {
 			directionsDisplay = new google.maps.DirectionsRenderer();
 			var myOptions = {
 			  zoom:14,
-			  mapTypeId: google.maps.MapTypeId.ROADMAP
+			  mapTypeId: google.maps.MapTypeId.HYBRID
 			}
 			
 			map = new google.maps.Map(document.getElementById("map_canvas2"), myOptions);
