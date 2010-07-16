@@ -849,7 +849,7 @@ body.page-id-43 .dt-showcase .detail .tabs{left:-1px;}
 /*************************************/
 /* Image Gallery
 /*************************************/
-.pikachoose{margin:0 auto 25px auto;}
+.pikachoose{margin:0 auto 25px auto;min-height:481px;}
 .pikachoose ul{padding-left:0;width:160px;margin:0;float:left;}
 .pikachoose ul li{float:left;border:1px solid #dddddd;padding:2px;background:#ffffff;margin:0 6px 4px 0;position:relative;overflow:hidden;-moz-box-shadow:3px 3px 3px #666;-webkit-box-shadow:3px 3px 3px #666;box-shadow:3px 3px 3px #666;}
 .pikachoose ul li div img{position:relative;cursor:pointer;}
