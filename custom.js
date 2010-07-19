@@ -394,59 +394,59 @@ jQuery(function($) {
 	/*			Contact Page Code 												   */
 	/************************************************************/
 	if($('#post-45').length) {	
-		$(window).load(function() { 
+			// Set initalization script
+			$(window).load(function() { 
 				// on load initialize the map
 				initialize(); 
-		});
-	}
-	
-	if($('#post-45').length) {		
+			});
+			
+		// Set global Gmap variabls
 		  var directionDisplay, map, map2, geocoder, marker;
 		  var directionsService = new google.maps.DirectionsService();
-		  var address = document.getElementById("dealership").value;
-		  var start = document.getElementById("start").value;
+		// Get addresses
+		  var location = $('#gmap .location').val();
 		
-		  function initialize() {
-			geocoder = new google.maps.Geocoder();
-			directionsDisplay = new google.maps.DirectionsRenderer();
-			
-			var myOptions = {
-				zoom:14,
-				navigationControl: false,
-				scaleControl: true,			  
-				mapTypeId: google.maps.MapTypeId.HYBRID
+			function initialize() {
+				// set services
+				geocoder = new google.maps.Geocoder();
+				directionsDisplay = new google.maps.DirectionsRenderer();
+				
+				// Set options
+				var myOptions = {
+					zoom:14,
+					navigationControl: false,
+					scaleControl: true,		
+					disableDefaultUI: true,
+					mapTypeId: google.maps.MapTypeId.HYBRID
+				}
+				
+				// set map elemetns
+				map = new google.maps.Map(document.getElementById("map_canvas2"), myOptions);
+				map2 = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+				
+				// Set default map and directions panel
+				directionsDisplay.setMap(map2);
+				directionsDisplay.setPanel(document.getElementById("directionsPanel")); 
+				
+				// convert address to geocode
+				codeAddress();
 			}
-			
-			map = new google.maps.Map(document.getElementById("map_canvas2"), myOptions);
-			map2 = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-
-			directionsDisplay.setMap(map2);
-			directionsDisplay.setPanel(document.getElementById("directionsPanel")); 
-			codeAddress();
-		  }
 		  
 		  function calcRoute() {
+			// Get locations
 			var start = document.getElementById("start").value;
-			var end = document.getElementById("dealership").value;
+			//var end = document.getElementById("dealership").value;
+			// Set Request options
 			var request = {
 				origin:start, 
-				destination:end,
+				destination:location,
 				travelMode: google.maps.DirectionsTravelMode.DRIVING
 			};
-			
+			// 
 			directionsService.route(request, function(response, status) {
 			  if (status == google.maps.DirectionsStatus.OK) {
+				 // Set Directions based on request response
 				directionsDisplay.setDirections(response);
-
-					// added to center map in this function
-					var bounds = new google.maps.LatLngBounds();
-					for (var i = 1; i < marker.length; i++) {
-						var loc = markers[i];
-						var myLatLng = new google.maps.LatLng(loc[1], loc[2]);
-						bounds.extend(myLatLng);
-						map.fitBounds(bounds);
-					}		
-					
 			  }
 			});
 			codeAddress();
@@ -462,9 +462,6 @@ jQuery(function($) {
 						  map: map, 
 						  position: results[0].geometry.location,
 					  });
-					google.maps.event.addListener(marker, 'click', function() {
-						infowindow.open(map,marker);
-					});
 					  
 					} else {
 					  alert("Geocode was not successful for the following reason: " + status);
