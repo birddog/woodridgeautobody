@@ -468,8 +468,7 @@ jQuery(function($) {
 					geocoder.geocode( { 'address': location}, function(results, status) {
 						if (status == google.maps.GeocoderStatus.OK) {
 							
-							// set center of map
-						  map.setCenter(results[0].geometry.location);
+
 						  
 						  // Set content of info window about marker
 						  if($('#gmap .location').selectedIndex == 0) {
@@ -490,6 +489,8 @@ jQuery(function($) {
 						// listen for click event
 						google.maps.event.addListener(marker, 'click', function() {
 							infowindow.open(map,marker);
+							// set center of map
+						  	map.setCenter(results[0].geometry.location);							
 						});		
 						
 						} else {
