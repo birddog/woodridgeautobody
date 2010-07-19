@@ -394,8 +394,10 @@ jQuery(function($) {
 	/*			Contact Page Code 												   */
 	/************************************************************/
 	if($('#post-45').length) {	
-		google.maps.event.addDomListener(window, 'load', initialize);
-
+		$(window).load(function() { 
+				// on load initialize the map
+				initialize(); 
+		});
 	}
 	
 	if($('#post-45').length) {		
