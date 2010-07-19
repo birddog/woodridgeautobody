@@ -431,37 +431,36 @@ jQuery(function($) {
 				codeAddress();
 			}
 		  
-		  function calcRoute() {
-			// Get locations
-			var start = document.getElementById("start").value;
-			//var end = document.getElementById("dealership").value;
-			// Set Request options
-			var request = {
-				origin:start, 
-				destination:location,
-				travelMode: google.maps.DirectionsTravelMode.DRIVING
-			};
-			// 
-			directionsService.route(request, function(response, status) {
-			  if (status == google.maps.DirectionsStatus.OK) {
-				 // Set Directions based on request response
-				directionsDisplay.setDirections(response);
-
-					// added to center map in this function
-					var bounds = new google.maps.LatLngBounds();
-					for (var i = 1; i < marker.length; i++) {
-						var loc = markers[i];
-						var myLatLng = new google.maps.LatLng(loc[1], loc[2]);
-						bounds.extend(myLatLng);
-						map.fitBounds(bounds);
-					}		
-					
-			  }
-			});
-			codeAddress();
-		  }
+			function calcRoute() {
+				// Get locations
+				var start = document.getElementById("start").value;
+				//var end = document.getElementById("dealership").value;
+				// Set Request options
+				var request = {
+					origin:start, 
+					destination:location,
+					travelMode: google.maps.DirectionsTravelMode.DRIVING
+				};
+				// set directions for large map
+				directionsService.route(request, function(response, status) {
+				  if (status == google.maps.DirectionsStatus.OK) {
+					 // Set Directions based on request response
+					directionsDisplay.setDirections(response);
+						// added to center map in this function
+						var bounds = new google.maps.LatLngBounds();
+						for (var i = 1; i < marker.length; i++) {
+							var loc = markers[i];
+							var myLatLng = new google.maps.LatLng(loc[1], loc[2]);
+							bounds.extend(myLatLng);
+							map.fitBounds(bounds);
+						}
+				  }
+				});
+				codeAddress();
+			}
 		 function codeAddress() {
 			if (geocoder) {
+				// default location
 				geocoder.geocode( { 'address': location}, function(results, status) {
 					if (status == google.maps.GeocoderStatus.OK) {
 					
@@ -479,6 +478,7 @@ jQuery(function($) {
 					  alert("Geocode was not successful for the following reason: " + status);
 					}
 				});
+				// Geocoder for user submitted start location
 				geocoder.geocode({'address': start}, function(results, status) {
 					if (status == google.maps.GeocoderStatus.OK){
 					
@@ -493,6 +493,7 @@ jQuery(function($) {
 						alert("Geocode was not successful for the following reason: " + status);	
 					}				
 				});
+				// Code location for large map version
 				geocoder.geocode({'address': location}, function(results, status) {
 					if (status == google.maps.GeocoderStatus.OK){
 					
