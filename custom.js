@@ -460,7 +460,7 @@ jQuery(function($) {
 			}
 		function changeLocation() {
 			if(geocoder){
-				$('#gmap .location').live('onchange', function() {
+				$('#gmap .location').bind('onchange', function() {
 															
 					location = $('#gmap .location option[@selected]').val();
 					
