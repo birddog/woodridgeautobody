@@ -471,11 +471,8 @@ jQuery(function($) {
 										
 					  marker = new google.maps.Marker({
 						  map: map, 
-						  position: results[0].geometry.location,
-						  title: "test"
+						  position: results[0].geometry.location
 					  });
-					  // To add the marker to the map, call setMap();
-					  marker.setMap(map);  
 					  
 					} else {
 					  alert("Geocode was not successful for the following reason: " + status);
@@ -489,7 +486,7 @@ jQuery(function($) {
 										
 					  var marker2 = new google.maps.Marker({
 						  map: map2, 
-						  position: results[0].geometry.location,
+						  position: results[0].geometry.location
 					  });					
 						
 					} else {
@@ -499,8 +496,6 @@ jQuery(function($) {
 				// Code location for large map version
 				geocoder.geocode({'address': location}, function(results, status) {
 					if (status == google.maps.GeocoderStatus.OK){
-					
-					  map2.setCenter(results[0].geometry.location);
 										
 					  var marker3 = new google.maps.Marker({
 						  map: map2, 
