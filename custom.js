@@ -472,17 +472,10 @@ jQuery(function($) {
 					  marker = new google.maps.Marker({
 						  map: map, 
 						  position: results[0].geometry.location,
+						  title: "test"
 					  });
-						coordInfoWindow = new google.maps.InfoWindow({content: location});
-						coordInfoWindow.setContent(location);
-						coordInfoWindow.setPosition(location);
-						coordInfoWindow.open(map); 					  
-					google.maps.event.addListener(marker, 'click', function() {
-						coordInfoWindow = new google.maps.InfoWindow({content: location});
-						coordInfoWindow.setContent(location);
-						coordInfoWindow.setPosition(location);
-						coordInfoWindow.open(map); 
-					});
+					  // To add the marker to the map, call setMap();
+					  marker.setMap(map);  
 					  
 					} else {
 					  alert("Geocode was not successful for the following reason: " + status);
