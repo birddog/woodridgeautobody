@@ -415,8 +415,7 @@ jQuery(function($) {
 				var myOptions = {
 					zoom:14,
 					navigationControl: false,
-					scaleControl: true,		
-					disableDefaultUI: true,
+					scaleControl: true,			  
 					mapTypeId: google.maps.MapTypeId.HYBRID
 				}
 				
@@ -447,13 +446,23 @@ jQuery(function($) {
 			  if (status == google.maps.DirectionsStatus.OK) {
 				 // Set Directions based on request response
 				directionsDisplay.setDirections(response);
+
+					// added to center map in this function
+					var bounds = new google.maps.LatLngBounds();
+					for (var i = 1; i < marker.length; i++) {
+						var loc = markers[i];
+						var myLatLng = new google.maps.LatLng(loc[1], loc[2]);
+						bounds.extend(myLatLng);
+						map.fitBounds(bounds);
+					}		
+					
 			  }
 			});
 			codeAddress();
 		  }
 		 function codeAddress() {
 			if (geocoder) {
-				geocoder.geocode( { 'address': address}, function(results, status) {
+				geocoder.geocode( { 'address': location}, function(results, status) {
 					if (status == google.maps.GeocoderStatus.OK) {
 					
 					  map.setCenter(results[0].geometry.location);
@@ -462,6 +471,9 @@ jQuery(function($) {
 						  map: map, 
 						  position: results[0].geometry.location,
 					  });
+					google.maps.event.addListener(marker, 'click', function() {
+						infowindow.open(map,marker);
+					});
 					  
 					} else {
 					  alert("Geocode was not successful for the following reason: " + status);
@@ -481,7 +493,7 @@ jQuery(function($) {
 						alert("Geocode was not successful for the following reason: " + status);	
 					}				
 				});
-				geocoder.geocode({'address': address}, function(results, status) {
+				geocoder.geocode({'address': location}, function(results, status) {
 					if (status == google.maps.GeocoderStatus.OK){
 					
 					  map2.setCenter(results[0].geometry.location);
