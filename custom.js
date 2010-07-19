@@ -466,18 +466,23 @@ jQuery(function($) {
 				// default location
 				geocoder.geocode( { 'address': location}, function(results, status) {
 					if (status == google.maps.GeocoderStatus.OK) {
-					
+						
+						// set center of map
 					  map.setCenter(results[0].geometry.location);
-					  var contentString = '<img height="65" style="margin-top: 3px; padding-right: 4px;" title="Calgary All makes autobody" alt="All Makes Autobody Logo" src="/wp-content/uploads/logo.png"><br />All Makes Collision<br />10860 46 Street SE<br />Calgary AB<br />Telephone: 403.536.0518';
 					  
+					  // Set content of info window about marker
+					  var contentString = '<img height="65" style="margin-top: 3px; padding-right: 4px;" title="Calgary All makes autobody" alt="All Makes Autobody Logo" src="/wp-content/uploads/logo.png"><br />All Makes Collision<br />10860 46 Street SE<br />Calgary AB<br />Telephone: 403.536.0518';
+					  // Set details of info window
 						var infowindow = new google.maps.InfoWindow({
-							content: contentString
-						});										
+							content: contentString,
+							size: new google.maps.Size(250, 150)
+						});									
+						// Place marker
 					  marker = new google.maps.Marker({
 						  map: map, 
 						  position: results[0].geometry.location
 					  });
-
+					// listen for click event
 					google.maps.event.addListener(marker, 'click', function() {
 						infowindow.open(map,marker);
 					});		
