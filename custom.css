@@ -769,7 +769,7 @@ td.emailRight{text-align:right !important;padding-right:5px;}
 /* GMAP
 /**********************************************/
 #gmap {}
-#gmap select {width:300px;padding:5px;}
+#gmap select {width:300px!important;padding:5px;}
 
 
 /**************************************
