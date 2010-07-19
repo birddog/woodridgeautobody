@@ -765,6 +765,12 @@ td.emailRight{text-align:right !important;padding-right:5px;}
 #contactTop #directionsPanel {height:100%; float:right; width:30%;}
 .adp-legal {font-size:9px;}
 
+/**********************************************/
+/* GMAP
+/**********************************************/
+#gmap {}
+#gmap select {width:300px;padding:5px;}
+
 
 /**************************************
 * Email Window
@@ -865,9 +871,7 @@ body.page-id-43 .dt-showcase .detail .tabs{left:-1px;}
 
 #post-4036 #pikame {display:block; float:none;width:auto;} 
 #post-4036 #pika_main {float:none;margin:0 0 10px;} 
-/**********************************************/
-/* GMAP
-/**********************************************/
+
 
 /**********************************************/
 /* Lightbox

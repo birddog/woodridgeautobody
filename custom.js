@@ -394,10 +394,8 @@ jQuery(function($) {
 	/*			Contact Page Code 												   */
 	/************************************************************/
 	if($('#post-45').length) {	
-		$(window).load(function() { 
-				// on load initialize the map
-				initialize(); 
-		});
+		google.maps.event.addDomListener(window, 'load', initialize);
+
 	}
 	
 	if($('#post-45').length) {		
@@ -409,24 +407,16 @@ jQuery(function($) {
 		  function initialize() {
 			geocoder = new google.maps.Geocoder();
 			directionsDisplay = new google.maps.DirectionsRenderer();
+			
 			var myOptions = {
-			  zoom:14,
-			navigationControl: false,
-			scaleControl: true,			  
-			  mapTypeId: google.maps.MapTypeId.HYBRID
+				zoom:14,
+				navigationControl: false,
+				scaleControl: true,			  
+				mapTypeId: google.maps.MapTypeId.HYBRID
 			}
 			
 			map = new google.maps.Map(document.getElementById("map_canvas2"), myOptions);
 			map2 = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-
-			var contentString = '<h1>Woodridge Autobody</h1>' + 
-				'<p>10860 46 Street SE, Calgary AB</p>' +
-				'<p>Telephone: 403.536.0518</p>' +
-				'<p>Email: <a href="mailto:info@woodridgeautobody.com">info@woodridgeautobody.com</a></p>';
-				
-			var infowindow = new google.maps.InfoWindow({
-				content: contentString
-			});
 
 			directionsDisplay.setMap(map2);
 			directionsDisplay.setPanel(document.getElementById("directionsPanel")); 
