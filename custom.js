@@ -401,14 +401,10 @@ jQuery(function($) {
 	}
 	
 	if($('#post-45').length) {		
-		  var directionDisplay;
+		  var directionDisplay, map, map2, geocoder, marker;
 		  var directionsService = new google.maps.DirectionsService();
-		  var map;
-		  var map2;
-		  var geocoder;
 		  var address = document.getElementById("dealership").value;
 		  var start = document.getElementById("start").value;
-			var marker;
 		
 		  function initialize() {
 			geocoder = new google.maps.Geocoder();
