@@ -458,6 +458,9 @@ jQuery(function($) {
 				});
 				codeAddress();
 			}
+		function changeLocation() {
+				
+		}
 		 function codeAddress() {
 			if (geocoder) {
 				// default location
@@ -470,8 +473,15 @@ jQuery(function($) {
 						  map: map, 
 						  position: results[0].geometry.location,
 					  });
+						coordInfoWindow = new google.maps.InfoWindow({content: location});
+						coordInfoWindow.setContent(location);
+						coordInfoWindow.setPosition(location);
+						coordInfoWindow.open(map); 					  
 					google.maps.event.addListener(marker, 'click', function() {
-						infowindow.open(map,marker);
+						coordInfoWindow = new google.maps.InfoWindow({content: location});
+						coordInfoWindow.setContent(location);
+						coordInfoWindow.setPosition(location);
+						coordInfoWindow.open(map); 
 					});
 					  
 					} else {
