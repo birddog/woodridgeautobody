@@ -478,7 +478,7 @@ jQuery(function($) {
 						  position: results[0].geometry.location
 					  });
 
-					google.maps.event.addListener(marker, 'click', function() {
+					google.maps.event.addListener(marker, 'load', function() {
 						infowindow.open(map,marker);
 					});		
 					
