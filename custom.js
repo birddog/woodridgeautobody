@@ -459,17 +459,13 @@ jQuery(function($) {
 				codeAddress();
 			}
 		function changeLocation() {
-			if(geocoder){
-				$('#gmap .location').bind('onchange', function() {
-															
+			if(geocoder){															
 					location = $('#gmap .location option[@selected]').val();
 					
 					// default location
 					geocoder.geocode( { 'address': location}, function(results, status) {
 						if (status == google.maps.GeocoderStatus.OK) {
-							
 
-						  
 						  // Set content of info window about marker
 						  if($('#gmap .location').selectedIndex == 0) {
 							var contentString = '<img height="65" style="margin-top: 3px; padding-right: 4px;" title="Calgary All makes autobody" alt="All Makes Autobody Logo" src="/wp-content/uploads/logo.png"><br /><h3>All Makes Collision</h3>10860 46 Street SE<br />Calgary AB<br />Telephone: 403.536.0518';
@@ -497,7 +493,6 @@ jQuery(function($) {
 						  alert("Geocode was not successful for the following reason: " + status);
 						}
 					});
-				});
 			}
 		}
 		 function codeAddress() {
