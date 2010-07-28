@@ -448,7 +448,7 @@ input[type="checkbox"]{font-size:11px;background-color:#fff;border:1px solid #ca
 .partsRequest, .serviceAppointment{width:768px;}
 .staffEmail {width:345px;}
 #slideout .estimate {width:98%;}
-.estimate {width:780px;}
+.estimate {width:620px;}
 
 /* default style */
 td .form {padding: 0 10px 10px;}
