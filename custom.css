@@ -519,7 +519,7 @@ td .form {padding: 0 10px 10px;}
 .form select {width:143px;}
 .form  input, .form select {font-size:11px;vertical-align:middle;padding:2px;}
 .contactusSmall textarea {width:300px;}
-.estimate textarea {width:800px;}
+.estimate textarea {width:550px;}
 .contactus textarea {width:800px;}
 
 /* form validation */
