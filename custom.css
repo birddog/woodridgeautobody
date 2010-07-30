@@ -755,7 +755,7 @@ body.page-id-43 .dt-showcase .detail .tabs{left:-1px;}
 /*************************************/
 #post-4793 .featureList {
 	float:left;	
-	width:45%;
+	width:400px;
 }
 /*************************************/
 /* Image Gallery
@@ -777,7 +777,7 @@ body.page-id-43 .dt-showcase .detail .tabs{left:-1px;}
 #post-4036 #pikame {display:block; float:none;width:auto;} 
 #post-4036 #pika_main {float:none;margin:0 0 10px;} 
 
-#post-4793 .pikachoose {width:50%!important;}
+#post-4793 .pikachoose {width:50%!important; float:left;}
 #post-4793 .pika_main {width:340px!important;}
 #post-4793 .pika_subdiv {width:330px!important;}
 
