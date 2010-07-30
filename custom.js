@@ -141,7 +141,7 @@ jQuery(function($) {
       $('#emailWindow #staff-name').attr('value', name);
       $('#emailWindow #staff-email').attr('value', email);
       $('body').append('<div id="jquery-overlay"></div>');
-      $('#jquery-overlay').css({zIndex:200,background:'black',opacity:0.85,height:$(document).height()}).fadeIn();
+      $('#jquery-overlay').css({zIndex:10001,background:'black',opacity:0.85,height:$(document).height()}).fadeIn();
       $('#emailWindow').fadeIn();
       $('div#jquery-overlay').click(function(){
         $('body #jquery-overlay').remove();
