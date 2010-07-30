@@ -732,18 +732,7 @@ td.emailRight{text-align:right !important;padding-right:5px;}
 	width:918px;
 }
 #contactTop .cfloat {float:left;margin:15px 10px 10px 10px;}
-#contactTop #routesearch #start {padding:5px;border:1px solid #afafaf;width:205px;}
-#contactTop #routesearch #getRoute {padding:4px;border:1px solid #afafaf;}
-#contactTop #mapholder{
-	padding:5px;
-	margin:0;
-	overflow:hidden;
-	display:none;
-}
-#contactTop #map_canvas { width:625px; height:359px;float:left; }
-#contactTop #map_canvas2 {width: 300px; height:300px;}
-#contactTop #directionsPanel {height:100%; float:right; width:30%;}
-.adp-legal {font-size:9px;}
+#contactTop #gmap {height:300px; width:300px;}
 
 /**********************************************/
 /* GMAP
