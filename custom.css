@@ -777,9 +777,9 @@ body.page-id-43 .dt-showcase .detail .tabs{left:-1px;}
 #post-4036 #pikame {display:block; float:none;width:auto;} 
 #post-4036 #pika_main {float:none;margin:0 0 10px;} 
 
-#post-4185 .pikachoose {width:50%;}
-#post-4185 .pika_main {width:340px;}
-#post-4185 .pika_subdiv {width:330px;}
+#post-4185 .pikachoose {width:50%!important;}
+#post-4185 .pika_main {width:340px!important;}
+#post-4185 .pika_subdiv {width:330px!important;}
 
 /**********************************************/
 /* Lightbox
