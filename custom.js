@@ -136,7 +136,7 @@ jQuery(function($) {
     current.children().children('.email').click(function(){
       name  = current.children().children('.name').html();
       email = current.children().children('.email').attr('href').replace(/mailto:/,'');
-      $('#emailWindow').css({position:'absolute', top:'8%'});
+      $('#emailWindow').css({position:'relative', top:'-200px', left:'100px'});
       $('#emailWindow #send-to-name').html(name);
       $('#emailWindow #staff-name').attr('value', name);
       $('#emailWindow #staff-email').attr('value', email);
