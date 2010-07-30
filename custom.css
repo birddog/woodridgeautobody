@@ -744,7 +744,7 @@ td.emailRight{text-align:right !important;padding-right:5px;}
 /**************************************
 * Email Window
 **************************************/
-#emailWindow{display:none;position:absolute;z-index:500;}
+#emailWindow{display:none;position:absolute;z-index:10002;}
 #emailWindow .staff-name{display:none;}
 #emailWindow .staff-email{display:none;}
 #emailWindow .button{float:left;}
