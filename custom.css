@@ -500,6 +500,7 @@ td .form {padding: 0 10px 10px;}
 .contactusSmall textarea {width:300px;}
 .estimate textarea {width:550px;}
 .contactus textarea {width:800px;}
+.staffEmail textarea {width:300px;}
 
 /* form validation */
 span.wpcf7-not-valid-tip {
