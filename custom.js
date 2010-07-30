@@ -570,6 +570,62 @@ jQuery(function($) {
 		});	
 	}
 	
+/****************************/
+/* autobody CONTACT PAGE  */
+/****************************/
+if ($('#post-45').length){
+		var locations = [
+				['All Makes Collision', '50.956514', '-113.968537', '4','10860 46 Street SE Calgary, Alberta'],
+				['Wood Chip Auto / All Makes Glass', '51.006111', '-114.055937','4', '430 53rd Ave SE Calgary, Alberta']];		
+			
+		function initalize() {
+							
+			// Set up map and center on city
+			var map = new google.maps.Map(document.getElementById('gmap'), {
+				zoom: 9,
+				center: new google.maps.LatLng(51.040733, -114.079665),
+				mapTypeId: google.maps.MapTypeId.ROADMAP,
+				mapTypeControlOptions: {  
+					style: google.maps.MapTypeControlStyle.DROPDOWN_MENU  
+				} ,
+				scaleControl: false
+			});
+			
+			// Place markers on map
+			setMarkers(map, locations);
+		
+			function setMarkers(map, locations) {
+				// Create info window for location information
+				var infowindow = new google.maps.InfoWindow();
+				var marker, i;
+				var bounds = new google.maps.LatLngBounds();
+				
+				// loop through locations and place markers on locations
+				for (i = 0; i < locations.length; i++) {  
+					var lat = locations[i][1];
+					var lng = locations[i][2];
+					var latlng = new google.maps.LatLng(lat, lng);
+					bounds.extend(latlng);
+					
+					marker = new google.maps.Marker({
+						position: new google.maps.LatLng(lat, lng),
+						map: map
+					});
+				
+					// Create listener for click event to open info window
+					google.maps.event.addListener(marker, 'click', (function(marker, i) {
+						return function() {
+							var content = '<h4>' + locations[i][0] + '</h4><p>' + locations[i][4] + '</p>';
+							infowindow.setContent(content);
+							infowindow.open(map, marker);
+						}
+					})(marker, i));
+				}
+				map.fitBounds(bounds);
+			}
+		}
+		initalize();
+	}	
 	
 });
 

@@ -704,7 +704,7 @@ body.page-id-206 #site-content > .grid_12 > #post-206{padding:0 0 0 10px;}
 .staff .person .toggle{display:block;}
 .staff .person .bio-text{display:none;position:absolute;font-size:11px;color:#999;background-color:#fff;z-index:900;padding:5px;width:200px;box-shadow:2px 2px 2px #222;-moz-box-shadow:2px 2px 2px #222;-webkit-box-shadow:2px 2px 2px #222;-moz-border-radius:5px;-webkit-border-radius:5px;border:1px solid #555;}
 .mmf-response-output.mmf-mail-sent-ng,
-.mmf-response-output.mmf-mail-sent-ok{background:#090;color:white;}
+.mmf-response-output.mmf-mail-sent-ok{background:#090;color:white;display:none;}
 #boxBio{width:720px;}
 #containerBio{width:220px;height:260px;background-image:url(/wp-content/uploads/2010/03/bioBg2.jpg);background-repeat:no-repeat;margin:10px;float:left;}
 .picBio{width:100px;float:left;margin-right:10px;}
