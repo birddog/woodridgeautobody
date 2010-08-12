@@ -37,7 +37,7 @@ blockquote cite {display:block;text-align:right;}
 
 /* img loader icon for slow loading images */
 img,
-.slideshowwidget {background:url(/wp-content/uploads/ajax-loader1.gif) no-repeat scroll 50% 50% #ffffff!important;}
+.slideshowwidget {background:url(/wp-content/uploads/ajax-loader1.gif) no-repeat scroll 50% 50% transparent!important;}
 
 /**************************************
 * General Layout Regions
